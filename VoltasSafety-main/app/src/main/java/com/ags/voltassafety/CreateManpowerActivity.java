@@ -42,228 +42,229 @@ import retrofit2.Response;
 
 public class CreateManpowerActivity extends BaseActivity {
 
-    EditText mETSiteProjectName,mETDate,mETProjectManagerName,mETProjectManagerMail,mETHeadCount,totalManHoursCount,mETHeadCountContract,
-            mETManHoursWorkedContract,mETManHoursWorked,mETProjectManagerMobileno,mETSafetyOfficerName,
-            mETSafetyOfficerMail,mETSafetyOfficerMobileno,mETPDBUName,mETPDBUMail,mETPDBUMobileno,
-            mETNoOfParticipents,mETNoOFSafetyMeetings,mETNoOfUnsafeActs,mETNoOfUnsafeConditions,mETFireExtinguishers,mETELCB,
-            mETElectrical,mETFullBodyHarness,mETPPES,mETLiftingEquipment,mETGrindingMachine,mETWeldingMachine,mETTotal,
-            mETThirdPartyVehicle,mETScaffoldLadder,mETOfficeStore,mETGasCuttingMachine,mETEmergencyTotal,mETMockDrillDate,
-            mETFireDrillCount,mETFireDrillDate,mETMockDrillCount,mETElectricalFire,mETSlipTrip,mETFallOfMaterial,mETEquipment,
-            mETCollision,mETToppling,mETFloorOpening,mETVehicleMovement,mETNearmissTotal,mETNSD,mETRoad,mETWED,mETHealth,mETOther,
-            mETSafetyEventsTotal,mETSrLeadership,mETInternal,mETExternal,mETAuditTotal,mETSrManagement,mETBUHeads,mETSLLB,
-            mETNoOfRewardGiven,mETNoOfSafetyViolationMemo,mETSafetyCommTotal,mETStructureCollapse,mETHighPressureRelease,
-            mETHighLowTempExposure,mETDangerousTotal,mETFatal,mETLTI,mETMTI,mETFirstAid,mETInjuriesTotal,
-            mETLTIFR,mETLTIFRPercent,mETMTIFR,mETMTIFRPercent,mETAIFR,mETAIFRPercent,mETInjuriesRateTotal,mETBurstingMachine,
-            mETPPE,mETWorkAtHeight,mETEnvironment,mETLowRisk,mETMediumRisk,mETHighRisk,mETCloseObservation,mETOpenObservation,
-            mETObservationTotal,mETExternalOtherName,mETInternalOtherName;
+    EditText mETSiteProjectName, mETDate, mETProjectManagerName, mETProjectManagerMail, mETHeadCount, totalManHoursCount, mETHeadCountContract,
+            mETManHoursWorkedContract, mETManHoursWorked, mETProjectManagerMobileno, mETSafetyOfficerName,
+            mETSafetyOfficerMail, mETSafetyOfficerMobileno, mETPDBUName, mETPDBUMail, mETPDBUMobileno,
+            mETNoOfParticipents, mETNoOFSafetyMeetings, mETNoOfUnsafeActs, mETNoOfUnsafeConditions, mETFireExtinguishers, mETELCB,
+            mETElectrical, mETFullBodyHarness, mETPPES, mETLiftingEquipment, mETGrindingMachine, mETWeldingMachine, mETTotal,
+            mETThirdPartyVehicle, mETScaffoldLadder, mETOfficeStore, mETGasCuttingMachine, mETEmergencyTotal, mETMockDrillDate,
+            mETFireDrillCount, mETFireDrillDate, mETMockDrillCount, mETElectricalFire, mETSlipTrip, mETFallOfMaterial, mETEquipment,
+            mETCollision, mETToppling, mETFloorOpening, mETVehicleMovement, mETNearmissTotal, mETNSD, mETRoad, mETWED, mETHealth, mETOther,
+            mETSafetyEventsTotal, mETSrLeadership, mETInternal, mETExternal, mETAuditTotal, mETSrManagement, mETBUHeads, mETSLLB,
+            mETNoOfRewardGiven, mETNoOfSafetyViolationMemo, mETSafetyCommTotal, mETStructureCollapse, mETHighPressureRelease,
+            mETHighLowTempExposure, mETDangerousTotal, mETFatal, mETLTI, mETMTI, mETFirstAid, mETInjuriesTotal,
+            mETLTIFR, mETLTIFRPercent, mETMTIFR, mETMTIFRPercent, mETAIFR, mETAIFRPercent, mETInjuriesRateTotal, mETBurstingMachine,
+            mETPPE, mETWorkAtHeight, mETEnvironment, mETLowRisk, mETMediumRisk, mETHighRisk, mETCloseObservation, mETOpenObservation,
+            mETObservationTotal, mETExternalOtherName, mETInternalOtherName;
 
-    TextView mTVVertical,mTVZone,mTVBranch,mCancel,mNext,mTitle,mTVIncidentInformation,mTVProjectManagerInformation,
-            mTVSafetyOfficer,mTVEditPDBU,mTVNoSafetyInspections,mTVEmergencyResponse,mTVNearMiss,mTVSafetyEvents,mTVNoOfAudits,
-            mTVSafetyCommunications,mTVDangerousOccurences,mTVNoOfInjuries,mTVInjuryRate,mTVObservationEmp,mTVInternalExternalName;
+    TextView mTVVertical, mTVZone, mTVBranch, mCancel, mNext, mTitle, mTVIncidentInformation, mTVProjectManagerInformation,
+            mTVSafetyOfficer, mTVEditPDBU, mTVNoSafetyInspections, mTVEmergencyResponse, mTVNearMiss, mTVSafetyEvents, mTVNoOfAudits,
+            mTVSafetyCommunications, mTVDangerousOccurences, mTVNoOfInjuries, mTVInjuryRate, mTVObservationEmp, mTVInternalExternalName;
 
-    Spinner mSPVertical,mSPZone,mSPBranch;
-    ArrayList<String> zonesArrayList,verticleArrayList;
+    Spinner mSPVertical, mSPZone, mSPBranch;
+    ArrayList<String> zonesArrayList, verticleArrayList;
     ArrayList<String> zonesArrayListId;
     ArrayList<String> branchArrayList;
     ArrayList<String> branchArrayListId;
-    ArrayAdapter zoneAdapter, branchArrayAdapter,verticalAdapter;
-    private String zoneID,branchID;
+    ArrayAdapter zoneAdapter, branchArrayAdapter, verticalAdapter;
+    private String zoneID, branchID;
     CreateManpowerInput objManpowerInput;
     String strSelectedDate = null;
     int intTotal = 0;
-    SimpleDateFormat mDateSDF,mDateOutput;
+    SimpleDateFormat mDateSDF, mDateOutput;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-                setContentView(R.layout.activity_create_manpower);
-                Toolbar toolbar = findViewById(R.id.toolbar);
-                setSupportActionBar(toolbar);
-                objManpowerInput= new CreateManpowerInput();
+            setContentView(R.layout.activity_create_manpower);
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            objManpowerInput = new CreateManpowerInput();
 
-                mDateSDF = new SimpleDateFormat("dd-MM-yyyy");
-                mDateOutput = new SimpleDateFormat("yyyy-MM-dd'T'");
+            mDateSDF = new SimpleDateFormat("dd-MM-yyyy");
+            mDateOutput = new SimpleDateFormat("yyyy-MM-dd'T'");
 
-                mETSiteProjectName = findViewById(R.id.edit_site_project_name);
-                mTVVertical = findViewById(R.id.textVertical);
-                mSPVertical = findViewById(R.id.spinnerVertical);
-                mTVZone = findViewById(R.id.textZone);
-                mSPZone = findViewById(R.id.spinnerZone);
-                mTVBranch = findViewById(R.id.textBranch);
-                mSPBranch = findViewById(R.id.spinnerBranch);
-                mETDate = findViewById(R.id.edit_date);
+            mETSiteProjectName = findViewById(R.id.edit_site_project_name);
+            mTVVertical = findViewById(R.id.textVertical);
+            mSPVertical = findViewById(R.id.spinnerVertical);
+            mTVZone = findViewById(R.id.textZone);
+            mSPZone = findViewById(R.id.spinnerZone);
+            mTVBranch = findViewById(R.id.textBranch);
+            mSPBranch = findViewById(R.id.spinnerBranch);
+            mETDate = findViewById(R.id.edit_date);
 
-                mTVIncidentInformation = findViewById(R.id.incident_information_text);
-                mETHeadCount = findViewById(R.id.edit_head_count);
-                totalManHoursCount = findViewById(R.id.edit_total_man_hours_worked);
-                mETHeadCountContract = findViewById(R.id.edit_head_count_contract);
-                mETManHoursWorked = findViewById(R.id.edit_man_hours_worked);
-                mETManHoursWorkedContract = findViewById(R.id.edit_man_hours_worked_contract);
+            mTVIncidentInformation = findViewById(R.id.incident_information_text);
+            mETHeadCount = findViewById(R.id.edit_head_count);
+            totalManHoursCount = findViewById(R.id.edit_total_man_hours_worked);
+            mETHeadCountContract = findViewById(R.id.edit_head_count_contract);
+            mETManHoursWorked = findViewById(R.id.edit_man_hours_worked);
+            mETManHoursWorkedContract = findViewById(R.id.edit_man_hours_worked_contract);
 
-                mTVObservationEmp = findViewById(R.id.txt_no_of_suggestions);
-                mETPPE = findViewById(R.id.edit_ppe);
-                mETWorkAtHeight = findViewById(R.id.edit_workatheight);
-                mETEnvironment = findViewById(R.id.edit_environment);
-                mETLowRisk = findViewById(R.id.edit_lowrisk);
-                mETMediumRisk = findViewById(R.id.edit_mediumrisk);
-                mETHighRisk = findViewById(R.id.edit_highrisk);
-                mETCloseObservation = findViewById(R.id.edit_closeobservation);
-                mETOpenObservation = findViewById(R.id.edit_openobservation);
-                mETObservationTotal = findViewById(R.id.edit_obserationtotal);
+            mTVObservationEmp = findViewById(R.id.txt_no_of_suggestions);
+            mETPPE = findViewById(R.id.edit_ppe);
+            mETWorkAtHeight = findViewById(R.id.edit_workatheight);
+            mETEnvironment = findViewById(R.id.edit_environment);
+            mETLowRisk = findViewById(R.id.edit_lowrisk);
+            mETMediumRisk = findViewById(R.id.edit_mediumrisk);
+            mETHighRisk = findViewById(R.id.edit_highrisk);
+            mETCloseObservation = findViewById(R.id.edit_closeobservation);
+            mETOpenObservation = findViewById(R.id.edit_openobservation);
+            mETObservationTotal = findViewById(R.id.edit_obserationtotal);
 
-                mTVInternalExternalName = findViewById(R.id.txt_other_internal_external_name);
-                mETInternalOtherName = findViewById(R.id.edit_internal_other_name);
-                mETExternalOtherName = findViewById(R.id.edit_external_other_name);
+            mTVInternalExternalName = findViewById(R.id.txt_other_internal_external_name);
+            mETInternalOtherName = findViewById(R.id.edit_internal_other_name);
+            mETExternalOtherName = findViewById(R.id.edit_external_other_name);
 
-                mTVProjectManagerInformation = findViewById(R.id.project_manager_information_text);
-                mETProjectManagerName = findViewById(R.id.edit_project_manager_name);
-                mETProjectManagerMail = findViewById(R.id.edit_project_manager_mail);
-                mETProjectManagerMobileno = findViewById(R.id.edit_project_manager_mobileno);
+            mTVProjectManagerInformation = findViewById(R.id.project_manager_information_text);
+            mETProjectManagerName = findViewById(R.id.edit_project_manager_name);
+            mETProjectManagerMail = findViewById(R.id.edit_project_manager_mail);
+            mETProjectManagerMobileno = findViewById(R.id.edit_project_manager_mobileno);
 
-                mTVSafetyOfficer = findViewById(R.id.txt_safety_officer);
-                mETSafetyOfficerName = findViewById(R.id.edit_safety_officer_name);
-                mETSafetyOfficerMail = findViewById(R.id.edit_safety_officer_mail);
-                mETSafetyOfficerMobileno = findViewById(R.id.edit_safety_officer_mobileno);
+            mTVSafetyOfficer = findViewById(R.id.txt_safety_officer);
+            mETSafetyOfficerName = findViewById(R.id.edit_safety_officer_name);
+            mETSafetyOfficerMail = findViewById(R.id.edit_safety_officer_mail);
+            mETSafetyOfficerMobileno = findViewById(R.id.edit_safety_officer_mobileno);
 
-                mTVEditPDBU = findViewById(R.id.text_pb_bu);
-                mETPDBUName = findViewById(R.id.edit_pb_bu_name);
-                mETPDBUMail = findViewById(R.id.edit_pb_bu_mail);
-                mETPDBUMobileno = findViewById(R.id.edit_pb_bu_mobileno);
+            mTVEditPDBU = findViewById(R.id.text_pb_bu);
+            mETPDBUName = findViewById(R.id.edit_pb_bu_name);
+            mETPDBUMail = findViewById(R.id.edit_pb_bu_mail);
+            mETPDBUMobileno = findViewById(R.id.edit_pb_bu_mobileno);
 
-                mETNoOfParticipents = findViewById(R.id.edit_no_of_participents);
-                mETNoOFSafetyMeetings = findViewById(R.id.edit_no_of_safetymeetings);
-                mETNoOfUnsafeActs = findViewById(R.id.edit_no_of_unsafe_acts);
-                mETNoOfUnsafeConditions = findViewById(R.id.edit_no_of_unsafe_conditions);
-                //mETNoOfSheMeetings = findViewById(R.id.edit_no_of_she_meetings);
+            mETNoOfParticipents = findViewById(R.id.edit_no_of_participents);
+            mETNoOFSafetyMeetings = findViewById(R.id.edit_no_of_safetymeetings);
+            mETNoOfUnsafeActs = findViewById(R.id.edit_no_of_unsafe_acts);
+            mETNoOfUnsafeConditions = findViewById(R.id.edit_no_of_unsafe_conditions);
+            //mETNoOfSheMeetings = findViewById(R.id.edit_no_of_she_meetings);
 
-                mTVNoSafetyInspections = findViewById(R.id.no_safety_inspections);
-                mETFireExtinguishers = findViewById(R.id.edit_fire_extinguishers);
-                mETELCB = findViewById(R.id.edit_elcb);
-                mETElectrical = findViewById(R.id.edit_electrical);
-                mETFullBodyHarness = findViewById(R.id.edit_full_body_harness);
-                mETPPES = findViewById(R.id.edit_ppes);
-                mETLiftingEquipment = findViewById(R.id.edit_lifting_equipment);
-                mETGrindingMachine = findViewById(R.id.edit_grinding_machine);
-                mETWeldingMachine = findViewById(R.id.edit_welding_machine);
-                mETGasCuttingMachine = findViewById(R.id.edit_gas_cutting_machine);
-                mETOfficeStore = findViewById(R.id.edit_office_store);
-                mETScaffoldLadder = findViewById(R.id.edit_scaffold_ladder);
-                mETThirdPartyVehicle = findViewById(R.id.edit_third_party_vehicle);
-                mETTotal = findViewById(R.id.edit_total);
+            mTVNoSafetyInspections = findViewById(R.id.no_safety_inspections);
+            mETFireExtinguishers = findViewById(R.id.edit_fire_extinguishers);
+            mETELCB = findViewById(R.id.edit_elcb);
+            mETElectrical = findViewById(R.id.edit_electrical);
+            mETFullBodyHarness = findViewById(R.id.edit_full_body_harness);
+            mETPPES = findViewById(R.id.edit_ppes);
+            mETLiftingEquipment = findViewById(R.id.edit_lifting_equipment);
+            mETGrindingMachine = findViewById(R.id.edit_grinding_machine);
+            mETWeldingMachine = findViewById(R.id.edit_welding_machine);
+            mETGasCuttingMachine = findViewById(R.id.edit_gas_cutting_machine);
+            mETOfficeStore = findViewById(R.id.edit_office_store);
+            mETScaffoldLadder = findViewById(R.id.edit_scaffold_ladder);
+            mETThirdPartyVehicle = findViewById(R.id.edit_third_party_vehicle);
+            mETTotal = findViewById(R.id.edit_total);
 
-                mTVEmergencyResponse = findViewById(R.id.txt_emergency_response);
-                mETFireDrillCount = findViewById(R.id.edit_fire_drill_count);
-                mETFireDrillDate = findViewById(R.id.edit_fire_drill_date);
-                mETMockDrillCount = findViewById(R.id.edit_mock_drill_count);
-                mETMockDrillDate = findViewById(R.id.edit_mock_drill_date);
-                mETEmergencyTotal = findViewById(R.id.edit_emergencytotal);
+            mTVEmergencyResponse = findViewById(R.id.txt_emergency_response);
+            mETFireDrillCount = findViewById(R.id.edit_fire_drill_count);
+            mETFireDrillDate = findViewById(R.id.edit_fire_drill_date);
+            mETMockDrillCount = findViewById(R.id.edit_mock_drill_count);
+            mETMockDrillDate = findViewById(R.id.edit_mock_drill_date);
+            mETEmergencyTotal = findViewById(R.id.edit_emergencytotal);
 
-                mTVNearMiss = findViewById(R.id.text_nearmiss);
-                mETElectricalFire = findViewById(R.id.edit_electrical_fire);
-                mETSlipTrip = findViewById(R.id.edit_slip_trip);
-                mETFallOfMaterial = findViewById(R.id.edit_fall_of_material);
-                mETEquipment = findViewById(R.id.edit_equipment);
-                mETCollision = findViewById(R.id.edit_collision);
-                mETToppling = findViewById(R.id.edit_toppling);
-                mETFloorOpening = findViewById(R.id.edit_floor_opening);
-                mETVehicleMovement = findViewById(R.id.edit_vehicle_movement);
-                mETNearmissTotal = findViewById(R.id.edit_nearmiss_total);
+            mTVNearMiss = findViewById(R.id.text_nearmiss);
+            mETElectricalFire = findViewById(R.id.edit_electrical_fire);
+            mETSlipTrip = findViewById(R.id.edit_slip_trip);
+            mETFallOfMaterial = findViewById(R.id.edit_fall_of_material);
+            mETEquipment = findViewById(R.id.edit_equipment);
+            mETCollision = findViewById(R.id.edit_collision);
+            mETToppling = findViewById(R.id.edit_toppling);
+            mETFloorOpening = findViewById(R.id.edit_floor_opening);
+            mETVehicleMovement = findViewById(R.id.edit_vehicle_movement);
+            mETNearmissTotal = findViewById(R.id.edit_nearmiss_total);
 
-                mTVSafetyEvents = findViewById(R.id.text_safety_events);
-                mETNSD = findViewById(R.id.edit_nsd);
-                mETRoad = findViewById(R.id.edit_road);
-                mETWED = findViewById(R.id.edit_wed);
-                mETHealth = findViewById(R.id.edit_health);
-                mETOther = findViewById(R.id.edit_other);
-                mETSafetyEventsTotal = findViewById(R.id.edit_safety_events_total);
+            mTVSafetyEvents = findViewById(R.id.text_safety_events);
+            mETNSD = findViewById(R.id.edit_nsd);
+            mETRoad = findViewById(R.id.edit_road);
+            mETWED = findViewById(R.id.edit_wed);
+            mETHealth = findViewById(R.id.edit_health);
+            mETOther = findViewById(R.id.edit_other);
+            mETSafetyEventsTotal = findViewById(R.id.edit_safety_events_total);
 
-                mTVNoOfAudits = findViewById(R.id.text_no_of_audits);
-                mETSrLeadership= findViewById(R.id.edit_sr_leadership);
-                mETInternal = findViewById(R.id.edit_internal);
-                mETExternal = findViewById(R.id.edit_external);
-                mETAuditTotal = findViewById(R.id.edit_audits_total);
+            mTVNoOfAudits = findViewById(R.id.text_no_of_audits);
+            mETSrLeadership = findViewById(R.id.edit_sr_leadership);
+            mETInternal = findViewById(R.id.edit_internal);
+            mETExternal = findViewById(R.id.edit_external);
+            mETAuditTotal = findViewById(R.id.edit_audits_total);
 
-                mTVSafetyCommunications = findViewById(R.id.text_safety_communications);
-                mETSrManagement = findViewById(R.id.edit_sr_management);
-                mETBUHeads = findViewById(R.id.edit_bu_heads);
-                mETSLLB = findViewById(R.id.edit_sllb);
-                mETNoOfRewardGiven = findViewById(R.id.edit_no_of_reward_given);
-                mETNoOfSafetyViolationMemo = findViewById(R.id.edit__no_of_safety_violation_memo);
-                mETSafetyCommTotal = findViewById(R.id.edit_safety_comm_total);
+            mTVSafetyCommunications = findViewById(R.id.text_safety_communications);
+            mETSrManagement = findViewById(R.id.edit_sr_management);
+            mETBUHeads = findViewById(R.id.edit_bu_heads);
+            mETSLLB = findViewById(R.id.edit_sllb);
+            mETNoOfRewardGiven = findViewById(R.id.edit_no_of_reward_given);
+            mETNoOfSafetyViolationMemo = findViewById(R.id.edit__no_of_safety_violation_memo);
+            mETSafetyCommTotal = findViewById(R.id.edit_safety_comm_total);
 
-                mTVDangerousOccurences = findViewById(R.id.text_dangerous_occurences);
-                mETStructureCollapse = findViewById(R.id.edit_structure_collapse);
-                mETHighPressureRelease = findViewById(R.id.edit_high_pressure_release);
-                mETHighLowTempExposure = findViewById(R.id.edit_high_low_temp_exposure);
-                mETBurstingMachine = findViewById(R.id.edit_bursting_machine);
-                mETDangerousTotal = findViewById(R.id.edit_dangerous_total);
+            mTVDangerousOccurences = findViewById(R.id.text_dangerous_occurences);
+            mETStructureCollapse = findViewById(R.id.edit_structure_collapse);
+            mETHighPressureRelease = findViewById(R.id.edit_high_pressure_release);
+            mETHighLowTempExposure = findViewById(R.id.edit_high_low_temp_exposure);
+            mETBurstingMachine = findViewById(R.id.edit_bursting_machine);
+            mETDangerousTotal = findViewById(R.id.edit_dangerous_total);
 
-                mTVNoOfInjuries = findViewById(R.id.text_no_of_injuries);
-                mETFatal = findViewById(R.id.edit_fatal);
-                mETLTI = findViewById(R.id.edit_lti);
-                mETMTI = findViewById(R.id.edit_mti);
-                mETFirstAid = findViewById(R.id.edit_first_aid);
-                mETInjuriesTotal = findViewById(R.id.edit_injuries_total);
+            mTVNoOfInjuries = findViewById(R.id.text_no_of_injuries);
+            mETFatal = findViewById(R.id.edit_fatal);
+            mETLTI = findViewById(R.id.edit_lti);
+            mETMTI = findViewById(R.id.edit_mti);
+            mETFirstAid = findViewById(R.id.edit_first_aid);
+            mETInjuriesTotal = findViewById(R.id.edit_injuries_total);
 
-                mTVInjuryRate = findViewById(R.id.text_injury_rate);
-                mETLTIFR = findViewById(R.id.edit_ltifr);
-                mETLTIFRPercent = findViewById(R.id.edit_ltifr_percent);
-                mETMTIFR = findViewById(R.id.edit_mtifr);
-                mETMTIFRPercent = findViewById(R.id.edit_mtifr_percent);
-                mETAIFR = findViewById(R.id.edit_aifr);
-                mETAIFRPercent = findViewById(R.id.edit_aifr_percent);
-                mETInjuriesRateTotal = findViewById(R.id.edit_injuries_rate_total);
+            mTVInjuryRate = findViewById(R.id.text_injury_rate);
+            mETLTIFR = findViewById(R.id.edit_ltifr);
+            mETLTIFRPercent = findViewById(R.id.edit_ltifr_percent);
+            mETMTIFR = findViewById(R.id.edit_mtifr);
+            mETMTIFRPercent = findViewById(R.id.edit_mtifr_percent);
+            mETAIFR = findViewById(R.id.edit_aifr);
+            mETAIFRPercent = findViewById(R.id.edit_aifr_percent);
+            mETInjuriesRateTotal = findViewById(R.id.edit_injuries_rate_total);
 
-                mCancel = findViewById(R.id.cancel);
-                mNext = findViewById(R.id.next);
-                mTitle = findViewById(R.id.create_title);
+            mCancel = findViewById(R.id.cancel);
+            mNext = findViewById(R.id.next);
+            mTitle = findViewById(R.id.create_title);
 
-                mTitle.setTypeface(Utilities.fontBold(getApplicationContext()));
-                mCancel.setTypeface(Utilities.fontRegular(getApplicationContext()));
-                mNext.setTypeface(Utilities.fontRegular(getApplicationContext()));
+            mTitle.setTypeface(Utilities.fontBold(getApplicationContext()));
+            mCancel.setTypeface(Utilities.fontRegular(getApplicationContext()));
+            mNext.setTypeface(Utilities.fontRegular(getApplicationContext()));
             totalManHoursCount.setTypeface(Utilities.fontRegular(getApplicationContext()));
 
-                mETSiteProjectName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mTVVertical.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mTVZone.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mTVBranch.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETDate.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETSiteProjectName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mTVVertical.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mTVZone.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mTVBranch.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETDate.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
 
-                mTVIncidentInformation.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
-                mETHeadCount.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETHeadCountContract.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETManHoursWorked.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETManHoursWorkedContract.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mTVIncidentInformation.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
+            mETHeadCount.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETHeadCountContract.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETManHoursWorked.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETManHoursWorkedContract.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
 
-                mTVObservationEmp.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
-                mETPPE.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETWorkAtHeight.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETEnvironment.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETLowRisk.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETMediumRisk.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETHighRisk.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETCloseObservation.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETOpenObservation.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETObservationTotal.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mTVObservationEmp.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
+            mETPPE.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETWorkAtHeight.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETEnvironment.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETLowRisk.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETMediumRisk.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETHighRisk.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETCloseObservation.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETOpenObservation.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETObservationTotal.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
 
-                mTVInternalExternalName.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
-                mETInternalOtherName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETExternalOtherName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mTVInternalExternalName.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
+            mETInternalOtherName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETExternalOtherName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
 
-                mTVProjectManagerInformation.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
-                mETProjectManagerName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETProjectManagerMail.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETProjectManagerMobileno.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mTVProjectManagerInformation.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
+            mETProjectManagerName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETProjectManagerMail.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETProjectManagerMobileno.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
 
-                mTVSafetyOfficer.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
-                mETSafetyOfficerName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETSafetyOfficerMail.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETSafetyOfficerMobileno.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mTVSafetyOfficer.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
+            mETSafetyOfficerName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETSafetyOfficerMail.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETSafetyOfficerMobileno.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
 
-                mTVEditPDBU.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
-                mETPDBUName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETPDBUMail.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-                mETPDBUMobileno.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mTVEditPDBU.setTypeface(Utilities.fontBold(CreateManpowerActivity.this));
+            mETPDBUName.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETPDBUMail.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETPDBUMobileno.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
 
             mETNoOfParticipents.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
             mETNoOFSafetyMeetings.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
@@ -282,7 +283,7 @@ public class CreateManpowerActivity extends BaseActivity {
             mETWeldingMachine.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
             mETGasCuttingMachine.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
             mETOfficeStore.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
-            mETScaffoldLadder .setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
+            mETScaffoldLadder.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
             mETThirdPartyVehicle.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
             mETTotal.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
 
@@ -349,11 +350,10 @@ public class CreateManpowerActivity extends BaseActivity {
             mETAIFRPercent.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
             mETInjuriesRateTotal.setTypeface(Utilities.fontRegular(CreateManpowerActivity.this));
 
-            if(Utilities.isConnectingToInternet(CreateManpowerActivity.this)){
+            if (Utilities.isConnectingToInternet(CreateManpowerActivity.this)) {
 
                 getManPowerDetails();
-            }
-            else{
+            } else {
                 showAlert("Please Check Your Internet Connection");
             }
             mETManHoursWorked.addTextChangedListener(new TextWatcher() {
@@ -371,16 +371,16 @@ public class CreateManpowerActivity extends BaseActivity {
                 public void afterTextChanged(Editable editable) {
                     int count = 0;
                     int countOne = 0;
-                    try{
-                        if(mETManHoursWorked.getText().toString().length() > 0){
+                    try {
+                        if (mETManHoursWorked.getText().toString().length() > 0) {
                             count = Integer.parseInt(mETManHoursWorked.getText().toString().trim());
                         }
-                        if(mETManHoursWorkedContract.getText().toString().length() > 0){
+                        if (mETManHoursWorkedContract.getText().toString().length() > 0) {
                             countOne = Integer.parseInt(mETManHoursWorkedContract.getText().toString().trim());
                         }
-                        int total = count+countOne;
-                        totalManHoursCount.setText(total+"");
-                    }catch (Exception e){
+                        int total = count + countOne;
+                        totalManHoursCount.setText(total + "");
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                 }
@@ -400,16 +400,16 @@ public class CreateManpowerActivity extends BaseActivity {
                 public void afterTextChanged(Editable editable) {
                     int count = 0;
                     int countOne = 0;
-                    try{
-                        if(mETManHoursWorked.getText().toString().length() > 0){
+                    try {
+                        if (mETManHoursWorked.getText().toString().length() > 0) {
                             count = Integer.parseInt(mETManHoursWorked.getText().toString().trim());
                         }
-                        if(mETManHoursWorkedContract.getText().toString().length() > 0){
+                        if (mETManHoursWorkedContract.getText().toString().length() > 0) {
                             countOne = Integer.parseInt(mETManHoursWorkedContract.getText().toString().trim());
                         }
-                        int total = count+countOne;
-                        totalManHoursCount.setText(total+"");
-                    }catch (Exception e){
+                        int total = count + countOne;
+                        totalManHoursCount.setText(total + "");
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                 }
@@ -428,13 +428,13 @@ public class CreateManpowerActivity extends BaseActivity {
                 @Override
                 public void afterTextChanged(Editable editable) {
                     int count = 0;
-                    try{
-                        if(mETHeadCountContract.getText().toString().length() > 0){
+                    try {
+                        if (mETHeadCountContract.getText().toString().length() > 0) {
                             count = Integer.parseInt(mETHeadCountContract.getText().toString().trim());
                         }
-                        int total = count*8*26;
-                        mETManHoursWorkedContract.setText(total+"");
-                    }catch (Exception e){
+                        int total = count * 8 * 26;
+                        mETManHoursWorkedContract.setText(total + "");
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                 }
@@ -452,14 +452,14 @@ public class CreateManpowerActivity extends BaseActivity {
 
                 @Override
                 public void afterTextChanged(Editable editable) {
-                   int count = 0;
-                    try{
-                        if(mETHeadCount.getText().toString().length() > 0){
+                    int count = 0;
+                    try {
+                        if (mETHeadCount.getText().toString().length() > 0) {
                             count = Integer.parseInt(mETHeadCount.getText().toString().trim());
                         }
-                        int total = count*8*26;
-                        mETManHoursWorked.setText(total+"");
-                    }catch (Exception e){
+                        int total = count * 8 * 26;
+                        mETManHoursWorked.setText(total + "");
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                 }
@@ -907,20 +907,20 @@ public class CreateManpowerActivity extends BaseActivity {
                 @Override
                 public void afterTextChanged(Editable editable) {
 
-                    int intCount1 = 0, intCount2 = 0,intTotal;
-                    try{
+                    int intCount1 = 0, intCount2 = 0, intTotal;
+                    try {
 
-                        if(mETFireDrillCount.getText().toString().length() > 0){
+                        if (mETFireDrillCount.getText().toString().length() > 0) {
 
                             intCount1 = Integer.parseInt(mETFireDrillCount.getText().toString().trim());
                         }
-                        if(mETMockDrillCount.getText().toString().length() > 0){
+                        if (mETMockDrillCount.getText().toString().length() > 0) {
 
                             intCount2 = Integer.parseInt(mETMockDrillCount.getText().toString().trim());
                         }
-                        intTotal =intCount1+intCount2;
-                        mETEmergencyTotal.setText(intTotal+"");
-                    }catch (Exception e){
+                        intTotal = intCount1 + intCount2;
+                        mETEmergencyTotal.setText(intTotal + "");
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                 }
@@ -940,20 +940,20 @@ public class CreateManpowerActivity extends BaseActivity {
                 @Override
                 public void afterTextChanged(Editable editable) {
 
-                    int intCount1 = 0, intCount2 = 0,intTotal;
-                    try{
+                    int intCount1 = 0, intCount2 = 0, intTotal;
+                    try {
 
-                        if(mETFireDrillCount.getText().toString().length() > 0){
+                        if (mETFireDrillCount.getText().toString().length() > 0) {
 
                             intCount1 = Integer.parseInt(mETFireDrillCount.getText().toString().trim());
                         }
-                        if(mETMockDrillCount.getText().toString().length() > 0){
+                        if (mETMockDrillCount.getText().toString().length() > 0) {
 
                             intCount2 = Integer.parseInt(mETMockDrillCount.getText().toString().trim());
                         }
-                        intTotal =intCount1+intCount2;
-                        mETEmergencyTotal.setText(intTotal+"");
-                    }catch (Exception e){
+                        intTotal = intCount1 + intCount2;
+                        mETEmergencyTotal.setText(intTotal + "");
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                 }
@@ -1376,7 +1376,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
                 @Override
                 public void afterTextChanged(Editable editable) {
-                   // getInjuriesCount();
+                    // getInjuriesCount();
                 }
             });
             mETLTI.addTextChangedListener(new TextWatcher() {
@@ -1392,19 +1392,19 @@ public class CreateManpowerActivity extends BaseActivity {
 
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    int count = 0,count1 = 0;
-                    try{
-                        if(mETLTI.getText().toString().length() > 0){
+                    int count = 0, count1 = 0;
+                    try {
+                        if (mETLTI.getText().toString().length() > 0) {
                             count = Integer.parseInt(mETLTI.getText().toString().trim());
                         }
-                        if(mETHeadCount.getText().toString().length() > 0){
-                            count1 = Integer.parseInt(mETHeadCount.getText().toString().trim()) * 8 *26;
+                        if (mETHeadCount.getText().toString().length() > 0) {
+                            count1 = Integer.parseInt(mETHeadCount.getText().toString().trim()) * 8 * 26;
                         }
 
-                        float total = (count * 1000000)/count1;
-                        mETLTIFRPercent.setText(total+"");
+                        float total = (count * 1000000) / count1;
+                        mETLTIFRPercent.setText(total + "");
 
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                     getInjuriesCount();
@@ -1424,20 +1424,20 @@ public class CreateManpowerActivity extends BaseActivity {
                 @Override
                 public void afterTextChanged(Editable editable) {
 
-                    int count = 0,count1 = 0;
-                    try{
-                        if(mETMTI.getText().toString().length() > 0){
+                    int count = 0, count1 = 0;
+                    try {
+                        if (mETMTI.getText().toString().length() > 0) {
                             count = Integer.parseInt(mETMTI.getText().toString().trim());
                         }
-                        if(mETHeadCount.getText().toString().length() > 0){
-                            count1 = Integer.parseInt(mETHeadCount.getText().toString().trim()) * 8 *26;
+                        if (mETHeadCount.getText().toString().length() > 0) {
+                            count1 = Integer.parseInt(mETHeadCount.getText().toString().trim()) * 8 * 26;
                         }
 
 
-                        float total = (count * 1000000)/count1;
-                        mETMTIFRPercent.setText(total+"");
+                        float total = (count * 1000000) / count1;
+                        mETMTIFRPercent.setText(total + "");
 
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                     getInjuriesCount();
@@ -1521,20 +1521,20 @@ public class CreateManpowerActivity extends BaseActivity {
 
                 @Override
                 public void afterTextChanged(Editable editable) {
-                    int count = 0,count1 = 0;
-                    try{
-                        if(mETLTI.getText().toString().length() > 0 && mETMTI.getText().toString().length() > 0 && mETFirstAid.getText().toString().length() > 0){
-                            count = Integer.parseInt(mETLTI.getText().toString().trim())+Integer.parseInt(mETMTI.getText().toString().trim())+Integer.parseInt(mETFirstAid.getText().toString().trim());
+                    int count = 0, count1 = 0;
+                    try {
+                        if (mETLTI.getText().toString().length() > 0 && mETMTI.getText().toString().length() > 0 && mETFirstAid.getText().toString().length() > 0) {
+                            count = Integer.parseInt(mETLTI.getText().toString().trim()) + Integer.parseInt(mETMTI.getText().toString().trim()) + Integer.parseInt(mETFirstAid.getText().toString().trim());
                         }
 
-                        if(mETHeadCount.getText().toString().length() > 0){
+                        if (mETHeadCount.getText().toString().length() > 0) {
                             count1 = Integer.parseInt(mETHeadCount.getText().toString().trim()) * 8 * 26;
                         }
 
-                        float total = (count * 1000000)/count1;
-                        mETAIFRPercent.setText(total+"");
+                        float total = (count * 1000000) / count1;
+                        mETAIFRPercent.setText(total + "");
 
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.getMessage();
                     }
 
@@ -1728,12 +1728,12 @@ public class CreateManpowerActivity extends BaseActivity {
             });
 
             mCancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+                @Override
+                public void onClick(View view) {
 
-                        finish();
-                    }
-                });
+                    finish();
+                }
+            });
 
             mCancel.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -1745,13 +1745,12 @@ public class CreateManpowerActivity extends BaseActivity {
                 @Override
                 public void onClick(View view) {
 
-                    try{
-                        if(validate()) {
+                    try {
+                        if (validate()) {
 
-                            if(objManpowerInput.getId() != null){
+                            if (objManpowerInput.getId() != null) {
 
-                            }
-                            else {
+                            } else {
                                 objManpowerInput.setProjectName(mETSiteProjectName.getText().toString().trim());
                                 objManpowerInput.setVertical(mSPVertical.getSelectedItem().toString());
                                 objManpowerInput.setZone(zoneID);
@@ -1811,7 +1810,7 @@ public class CreateManpowerActivity extends BaseActivity {
                                 objManpowerInput.setNoOfSafetyInspectionsScaffoldLadder(Integer.parseInt(mETScaffoldLadder.getText().toString().trim()));
                                 objManpowerInput.setNoOfSafetyInspectionsThirdPartyVehicle(Integer.parseInt(mETThirdPartyVehicle.getText().toString().trim()));
                                 //objManpowerInput.sett(Integer.parseInt(mETFullBodyHarness.getText().toString().trim()));
-                                Date fireDate = null,mockDate = null;
+                                Date fireDate = null, mockDate = null;
                                 try {
                                     fireDate = mDateSDF.parse(mETFireDrillDate.getText().toString().trim());
                                 } catch (ParseException e) {
@@ -1880,20 +1879,20 @@ public class CreateManpowerActivity extends BaseActivity {
                             intent.putExtras(bd);
                             startActivity(intent);
                         }
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.getMessage();
                     }
 
                 }
             });
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
         }
     }
 
     private void getInjurieRateCount() {
         try {
-            int count = 0,count1 = 0,count2 = 0;
+            int count = 0, count1 = 0, count2 = 0;
             if (mETLTIFR.getText().toString().trim().length() > 0) {
                 count = Integer.parseInt(mETLTIFR.getText().toString().trim());
             }
@@ -1914,7 +1913,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
     private void getInjuriesCount() {
         try {
-            int count = 0,count1 = 0,count2 = 0,count3 = 0;
+            int count = 0, count1 = 0, count2 = 0, count3 = 0;
             if (mETFatal.getText().toString().trim().length() > 0) {
                 count = Integer.parseInt(mETFatal.getText().toString().trim());
             }
@@ -1938,7 +1937,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
     private void getDangerousOccurenceCount() {
         try {
-            int count = 0,count1 = 0,count2 = 0,count3 = 0;
+            int count = 0, count1 = 0, count2 = 0, count3 = 0;
             if (mETStructureCollapse.getText().toString().trim().length() > 0) {
                 count = Integer.parseInt(mETStructureCollapse.getText().toString().trim());
             }
@@ -1962,7 +1961,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
     private void getSafetyCommunicationCount() {
         try {
-            int count = 0,count1 = 0,count2 = 0,count3 = 0,count4 = 0;
+            int count = 0, count1 = 0, count2 = 0, count3 = 0, count4 = 0;
             if (mETSrManagement.getText().toString().trim().length() > 0) {
                 count = Integer.parseInt(mETSrManagement.getText().toString().trim());
             }
@@ -1989,7 +1988,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
     private void getAuditsCount() {
         try {
-            int count = 0,count1 = 0,count2 =0;
+            int count = 0, count1 = 0, count2 = 0;
             if (mETSrLeadership.getText().toString().trim().length() > 0) {
                 count = Integer.parseInt(mETSrLeadership.getText().toString().trim());
             }
@@ -2009,7 +2008,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
     private void getSafetyEventsCount() {
         try {
-            int count = 0,count1 = 0,count2 = 0,count3 = 0,count4 = 0;
+            int count = 0, count1 = 0, count2 = 0, count3 = 0, count4 = 0;
             if (mETNSD.getText().toString().trim().length() > 0) {
                 count = Integer.parseInt(mETNSD.getText().toString().trim());
             }
@@ -2036,7 +2035,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
     private void getObservationCount() {
         try {
-            int count = 0,count1 = 0,count2 = 0,count3 = 0,count4 = 0,count5 = 0,count6 = 0,count7 = 0;
+            int count = 0, count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0, count7 = 0;
             if (mETPPE.getText().toString().trim().length() > 0) {
                 count = Integer.parseInt(mETPPE.getText().toString().trim());
             }
@@ -2071,7 +2070,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
     private void getNearMissCount() {
         try {
-            int count = 0,count1 = 0,count2 = 0,count3 = 0,count4 = 0,count5 = 0,count6 = 0,count7 = 0;
+            int count = 0, count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0, count7 = 0;
             if (mETElectricalFire.getText().toString().trim().length() > 0) {
                 count = Integer.parseInt(mETElectricalFire.getText().toString().trim());
             }
@@ -2106,8 +2105,8 @@ public class CreateManpowerActivity extends BaseActivity {
 
     private void getSafetyInspectionCount() {
         try {
-           int count = 0,count1 = 0,count2 = 0,count3 = 0,count4 = 0,count5 = 0,count6 = 0,count7 = 0,count8 = 0,count9 = 0,
-                   count10 = 0,count11 = 0;
+            int count = 0, count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0, count6 = 0, count7 = 0, count8 = 0, count9 = 0,
+                    count10 = 0, count11 = 0;
             if (mETFireExtinguishers.getText().toString().trim().length() > 0) {
                 count = Integer.parseInt(mETFireExtinguishers.getText().toString().trim());
             }
@@ -2166,12 +2165,12 @@ public class CreateManpowerActivity extends BaseActivity {
                         dismissProgress();
                         if (response.body().getResult() != null) {
 
-                                for (int i = 0; i < response.body().getResult().size(); i++) {
-                                    verticleArrayList.add(response.body().getResult().get(i).getClientName());
-                                }
-                                verticalAdapter = new ArrayAdapter(CreateManpowerActivity.this, android.R.layout.simple_list_item_1, verticleArrayList);
-                                verticalAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
-                                mSPVertical.setAdapter(verticalAdapter);
+                            for (int i = 0; i < response.body().getResult().size(); i++) {
+                                verticleArrayList.add(response.body().getResult().get(i).getClientName());
+                            }
+                            verticalAdapter = new ArrayAdapter(CreateManpowerActivity.this, android.R.layout.simple_list_item_1, verticleArrayList);
+                            verticalAdapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+                            mSPVertical.setAdapter(verticalAdapter);
                             if (objManpowerInput.getVertical() != null) {
                                 String branch = objManpowerInput.getVertical();
                                 int position = verticalAdapter.getPosition(branch);
@@ -2204,7 +2203,7 @@ public class CreateManpowerActivity extends BaseActivity {
         try {
             SharedPreferences sharedPreferences = getSharedPreferences("Bearer", MODE_PRIVATE);
             ApiInterface apiInterface = RetrofitConnect.getClient().create(ApiInterface.class);
-            Call<UserZoneResponse> call = apiInterface.getGuestZoneResponse("Bearer " + sharedPreferences.getString("Bearertoken", null),sharedPreferences.getString("Domain", null));
+            Call<UserZoneResponse> call = apiInterface.getGuestZoneResponse("Bearer " + sharedPreferences.getString("Bearertoken", null), sharedPreferences.getString("Domain", null));
             showProgressDialog(CreateManpowerActivity.this);
             call.enqueue(new Callback<UserZoneResponse>() {
                 public void onResponse(Call<UserZoneResponse> call, Response<UserZoneResponse> response) {
@@ -2213,7 +2212,7 @@ public class CreateManpowerActivity extends BaseActivity {
                     zonesArrayListId.add("");
                     zonesArrayList.add("Select Zone *");
                     if (response.isSuccessful()) {
-                       dismissProgress();
+                        dismissProgress();
 
                         for (int i = 0; i < response.body().getResult().size(); i++) {
                             zonesArrayList.add(response.body().getResult().get(i).getZoneName());
@@ -2227,9 +2226,9 @@ public class CreateManpowerActivity extends BaseActivity {
                         int position = 0;
                         if (objManpowerInput.getZone() != null) {
                             String branch = objManpowerInput.getZone();
-                            for(int i = 0; i < zonesArrayListId.size(); i++){
+                            for (int i = 0; i < zonesArrayListId.size(); i++) {
 
-                                if(branch.equalsIgnoreCase(zonesArrayListId.get(i))){
+                                if (branch.equalsIgnoreCase(zonesArrayListId.get(i))) {
                                     position = i;
                                 }
                             }
@@ -2241,7 +2240,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
 
                 public void onFailure(Call<UserZoneResponse> call, Throwable t) {
-                   dismissProgress();
+                    dismissProgress();
                     Log.d("LoginResponse", t.getMessage() + "");
                 }
 
@@ -2267,7 +2266,7 @@ public class CreateManpowerActivity extends BaseActivity {
                     branchArrayListId.add("");
                     branchArrayList.add("Select Branch *");
                     if (response.isSuccessful()) {
-                       dismissProgress();
+                        dismissProgress();
                         Log.d("", response.toString());
                         for (int i = 0; i < response.body().getResult().size(); i++) {
                             branchArrayList.add(response.body().getResult().get(i).getBranchName());
@@ -2280,17 +2279,17 @@ public class CreateManpowerActivity extends BaseActivity {
                         int position = 0;
                         if (objManpowerInput.getBranch() != null) {
                             String branch = objManpowerInput.getBranch();
-                            for(int i = 0; i < branchArrayListId.size(); i++){
+                            for (int i = 0; i < branchArrayListId.size(); i++) {
 
-                                if(branch.equalsIgnoreCase(branchArrayListId.get(i))){
+                                if (branch.equalsIgnoreCase(branchArrayListId.get(i))) {
                                     position = i;
                                 }
                             }
-                          // int position = branchArrayAdapter.getPosition(branch);
+                            // int position = branchArrayAdapter.getPosition(branch);
                             mSPBranch.setSelection(position);
                         }
 
-                      //  getManPowerDetails();
+                        //  getManPowerDetails();
 
                     } else {
                         dismissProgress();
@@ -2312,6 +2311,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
         }
     }
+
     private void getManPowerDetails() {
         try {
             SharedPreferences sharedPreferences = getSharedPreferences("Bearer", MODE_PRIVATE);
@@ -2325,7 +2325,7 @@ public class CreateManpowerActivity extends BaseActivity {
                         dismissProgress();
 
                         try {
-                            if(response.body().getSuccess()) {
+                            if (response.body().getSuccess()) {
                                 objManpowerInput = response.body().getResult();
 
                                 mETSiteProjectName.setText(objManpowerInput.getProjectName());
@@ -2339,22 +2339,22 @@ public class CreateManpowerActivity extends BaseActivity {
                                     e.printStackTrace();
                                 }
                                 mETDate.setText(mDateSDF.format(misDate));
-                                mETHeadCount.setText(""+objManpowerInput.getStaffHeadcount());
-                                mETHeadCountContract.setText(""+objManpowerInput.getContractHeadcount());
-                                mETManHoursWorked.setText(""+objManpowerInput.getStaffWorkedHours());
-                                mETManHoursWorkedContract.setText(""+objManpowerInput.getContractWorkedHours());
+                                mETHeadCount.setText("" + objManpowerInput.getStaffHeadcount());
+                                mETHeadCountContract.setText("" + objManpowerInput.getContractHeadcount());
+                                mETManHoursWorked.setText("" + objManpowerInput.getStaffWorkedHours());
+                                mETManHoursWorkedContract.setText("" + objManpowerInput.getContractWorkedHours());
 
-                                mETPPE.setText(""+objManpowerInput.getSoeppe());
-                                mETWorkAtHeight.setText(""+objManpowerInput.getSoeworkatHeight());
-                                mETEnvironment.setText(""+objManpowerInput.getSoeenvironment());
-                                mETLowRisk.setText(""+objManpowerInput.getSoelowRisk());
-                                mETMediumRisk.setText(""+objManpowerInput.getSoemediumRisk());
-                                mETHighRisk.setText(""+objManpowerInput.getSoehighRisk());
-                                mETCloseObservation.setText(""+objManpowerInput.getSoecloseObservation());
-                                mETOpenObservation.setText(""+objManpowerInput.getSoeopenObservation());
+                                mETPPE.setText("" + objManpowerInput.getSoeppe());
+                                mETWorkAtHeight.setText("" + objManpowerInput.getSoeworkatHeight());
+                                mETEnvironment.setText("" + objManpowerInput.getSoeenvironment());
+                                mETLowRisk.setText("" + objManpowerInput.getSoelowRisk());
+                                mETMediumRisk.setText("" + objManpowerInput.getSoemediumRisk());
+                                mETHighRisk.setText("" + objManpowerInput.getSoehighRisk());
+                                mETCloseObservation.setText("" + objManpowerInput.getSoecloseObservation());
+                                mETOpenObservation.setText("" + objManpowerInput.getSoeopenObservation());
 
-                                mETInternalOtherName.setText(""+objManpowerInput.getInternalOtherName());
-                                mETExternalOtherName.setText(""+objManpowerInput.getExternalOtherName());
+                                mETInternalOtherName.setText("" + objManpowerInput.getInternalOtherName());
+                                mETExternalOtherName.setText("" + objManpowerInput.getExternalOtherName());
 
                                 mETProjectManagerName.setText(objManpowerInput.getManagerName());
                                 mETProjectManagerMail.setText(objManpowerInput.getManagerEmail());
@@ -2368,26 +2368,26 @@ public class CreateManpowerActivity extends BaseActivity {
                                 mETPDBUMail.setText(objManpowerInput.getManagerEmail());
                                 mETPDBUMobileno.setText(objManpowerInput.getManagerContact());
 
-                                mETNoOfParticipents.setText(""+objManpowerInput.getNoOfParticipantsInToolBoxTalk());
-                                mETNoOFSafetyMeetings.setText(""+objManpowerInput.getNoOfSafetyMeetings());
-                                mETNoOfUnsafeActs.setText(""+objManpowerInput.getNoOfSafetyObservationsUnsafeAct());
-                                mETNoOfUnsafeConditions.setText(""+objManpowerInput.getNoOfSafetyObservationsUnsafeCondition());
+                                mETNoOfParticipents.setText("" + objManpowerInput.getNoOfParticipantsInToolBoxTalk());
+                                mETNoOFSafetyMeetings.setText("" + objManpowerInput.getNoOfSafetyMeetings());
+                                mETNoOfUnsafeActs.setText("" + objManpowerInput.getNoOfSafetyObservationsUnsafeAct());
+                                mETNoOfUnsafeConditions.setText("" + objManpowerInput.getNoOfSafetyObservationsUnsafeCondition());
                                 //mETNoOfSheMeetings.setText(""+objManpowerInput.getNoOfShemeetings());
 
-                                mETFireExtinguishers.setText(""+objManpowerInput.getNoOfSafetyInspectionsFireExtinguishers());
-                                mETELCB.setText(""+objManpowerInput.getNoOfSafetyInspectionsElcb());
-                                mETElectrical.setText(""+objManpowerInput.getNoOfSafetyInspectionsElectrical());
-                                mETFullBodyHarness.setText(""+objManpowerInput.getNoOfSafetyInspectionsFullBodyHarness());
-                                mETPPES.setText(""+objManpowerInput.getNoOfSafetyInspectionsPppes());
-                                mETLiftingEquipment.setText(""+objManpowerInput.getNoOfSafetyInspectionsLiftingEquipment());
-                                mETGrindingMachine.setText(""+objManpowerInput.getNoOfSafetyInspectionsGrindingMachine());
-                                mETWeldingMachine.setText(""+objManpowerInput.getNoOfSafetyInspectionsWeldingMachine());
-                                mETGasCuttingMachine.setText(""+objManpowerInput.getNoOfSafetyInspectionsGasCuttingMachine());
-                                mETOfficeStore.setText(""+objManpowerInput.getNoOfSafetyInspectionsOfficeStore());
-                                mETScaffoldLadder.setText(""+objManpowerInput.getNoOfSafetyInspectionsScaffoldLadder());
-                                mETThirdPartyVehicle.setText(""+objManpowerInput.getNoOfSafetyInspectionsThirdPartyVehicle());
+                                mETFireExtinguishers.setText("" + objManpowerInput.getNoOfSafetyInspectionsFireExtinguishers());
+                                mETELCB.setText("" + objManpowerInput.getNoOfSafetyInspectionsElcb());
+                                mETElectrical.setText("" + objManpowerInput.getNoOfSafetyInspectionsElectrical());
+                                mETFullBodyHarness.setText("" + objManpowerInput.getNoOfSafetyInspectionsFullBodyHarness());
+                                mETPPES.setText("" + objManpowerInput.getNoOfSafetyInspectionsPppes());
+                                mETLiftingEquipment.setText("" + objManpowerInput.getNoOfSafetyInspectionsLiftingEquipment());
+                                mETGrindingMachine.setText("" + objManpowerInput.getNoOfSafetyInspectionsGrindingMachine());
+                                mETWeldingMachine.setText("" + objManpowerInput.getNoOfSafetyInspectionsWeldingMachine());
+                                mETGasCuttingMachine.setText("" + objManpowerInput.getNoOfSafetyInspectionsGasCuttingMachine());
+                                mETOfficeStore.setText("" + objManpowerInput.getNoOfSafetyInspectionsOfficeStore());
+                                mETScaffoldLadder.setText("" + objManpowerInput.getNoOfSafetyInspectionsScaffoldLadder());
+                                mETThirdPartyVehicle.setText("" + objManpowerInput.getNoOfSafetyInspectionsThirdPartyVehicle());
                                 //mETTotal.setText(objManpowerInput.get());
-                                mETFireDrillCount.setText(""+objManpowerInput.getEmergencyResponseFireDrillCount());
+                                mETFireDrillCount.setText("" + objManpowerInput.getEmergencyResponseFireDrillCount());
                                 Date fireDate = null;
                                 try {
                                     fireDate = mDateOutput.parse(objManpowerInput.getEmergencyResponseFireDrillDate());
@@ -2395,8 +2395,8 @@ public class CreateManpowerActivity extends BaseActivity {
                                     e.printStackTrace();
                                 }
                                 mETFireDrillDate.setText(mDateSDF.format(fireDate));
-                               // mETFireDrillDate.setText(objManpowerInput.getEmergencyResponseFireDrillDate());
-                                mETMockDrillCount.setText(""+objManpowerInput.getEmergencyResponseMockDrillCount());
+                                // mETFireDrillDate.setText(objManpowerInput.getEmergencyResponseFireDrillDate());
+                                mETMockDrillCount.setText("" + objManpowerInput.getEmergencyResponseMockDrillCount());
                                 Date mockDate = null;
                                 try {
                                     mockDate = mDateOutput.parse(objManpowerInput.getEmergencyResponseMockDrillDate());
@@ -2404,56 +2404,55 @@ public class CreateManpowerActivity extends BaseActivity {
                                     e.printStackTrace();
                                 }
                                 mETMockDrillDate.setText(mDateSDF.format(mockDate));
-                               // mETMockDrillDate.setText(objManpowerInput.getEmergencyResponseMockDrillDate());
+                                // mETMockDrillDate.setText(objManpowerInput.getEmergencyResponseMockDrillDate());
 
-                                mETElectricalFire.setText(""+objManpowerInput.getNearMissElectricalFire());
-                                mETSlipTrip.setText(""+objManpowerInput.getNearMissSlipTrip());
-                                mETFallOfMaterial.setText(""+objManpowerInput.getNearMissFallOfMaterial());
-                                mETEquipment.setText(""+objManpowerInput.getNearMissEquipment());
-                                mETCollision.setText(""+objManpowerInput.getNearMissCollision());
-                                mETToppling.setText(""+objManpowerInput.getNearMissToppling());
-                                mETFloorOpening.setText(""+objManpowerInput.getNearMissFloorOpening());
-                                mETVehicleMovement.setText(""+objManpowerInput.getNearMissVehicleMovement());
+                                mETElectricalFire.setText("" + objManpowerInput.getNearMissElectricalFire());
+                                mETSlipTrip.setText("" + objManpowerInput.getNearMissSlipTrip());
+                                mETFallOfMaterial.setText("" + objManpowerInput.getNearMissFallOfMaterial());
+                                mETEquipment.setText("" + objManpowerInput.getNearMissEquipment());
+                                mETCollision.setText("" + objManpowerInput.getNearMissCollision());
+                                mETToppling.setText("" + objManpowerInput.getNearMissToppling());
+                                mETFloorOpening.setText("" + objManpowerInput.getNearMissFloorOpening());
+                                mETVehicleMovement.setText("" + objManpowerInput.getNearMissVehicleMovement());
 
-                                mETNSD.setText(""+objManpowerInput.getSafetyEventsNsd());
-                                mETRoad.setText(""+objManpowerInput.getSafetyEventsRoad());
-                                mETWED.setText(""+objManpowerInput.getSafetyEventsWed());
-                                mETHealth.setText(""+objManpowerInput.getSafetyEventsHealth());
-                                mETOther.setText(""+objManpowerInput.getSafetyEventsOther());
+                                mETNSD.setText("" + objManpowerInput.getSafetyEventsNsd());
+                                mETRoad.setText("" + objManpowerInput.getSafetyEventsRoad());
+                                mETWED.setText("" + objManpowerInput.getSafetyEventsWed());
+                                mETHealth.setText("" + objManpowerInput.getSafetyEventsHealth());
+                                mETOther.setText("" + objManpowerInput.getSafetyEventsOther());
 
-                                mETSrLeadership.setText(""+objManpowerInput.getNoOfAuditsSrLeadership());
-                                mETInternal.setText(""+objManpowerInput.getNoOfAuditsInternal());
-                                mETExternal.setText(""+objManpowerInput.getNoOfAuditsExternal());
+                                mETSrLeadership.setText("" + objManpowerInput.getNoOfAuditsSrLeadership());
+                                mETInternal.setText("" + objManpowerInput.getNoOfAuditsInternal());
+                                mETExternal.setText("" + objManpowerInput.getNoOfAuditsExternal());
 
-                                mETSrManagement.setText(""+objManpowerInput.getSafetyCommunicationsSrManagement());
-                                mETBUHeads.setText(""+objManpowerInput.getSafetyCommunicationsBuheads());
-                                mETSLLB.setText(""+objManpowerInput.getSafetyCommunicationsSllb());
-                                mETNoOfRewardGiven.setText(""+objManpowerInput.getNoOfRewardGiven());
-                                mETNoOfSafetyViolationMemo.setText(""+objManpowerInput.getNoOfSafetViolationMemoIssued());
+                                mETSrManagement.setText("" + objManpowerInput.getSafetyCommunicationsSrManagement());
+                                mETBUHeads.setText("" + objManpowerInput.getSafetyCommunicationsBuheads());
+                                mETSLLB.setText("" + objManpowerInput.getSafetyCommunicationsSllb());
+                                mETNoOfRewardGiven.setText("" + objManpowerInput.getNoOfRewardGiven());
+                                mETNoOfSafetyViolationMemo.setText("" + objManpowerInput.getNoOfSafetViolationMemoIssued());
 
-                                mETStructureCollapse.setText(""+objManpowerInput.getDangerousOccurrencesStructureCollapse());
-                                mETHighPressureRelease.setText(""+objManpowerInput.getDangerousOccurrencesHighPreassureRelease());
-                                mETHighLowTempExposure.setText(""+objManpowerInput.getDangerousOccurencesHighLowTempExposure());
-                                mETBurstingMachine.setText(""+objManpowerInput.getDangerousOccurencesBurstiingOfMachine());
+                                mETStructureCollapse.setText("" + objManpowerInput.getDangerousOccurrencesStructureCollapse());
+                                mETHighPressureRelease.setText("" + objManpowerInput.getDangerousOccurrencesHighPreassureRelease());
+                                mETHighLowTempExposure.setText("" + objManpowerInput.getDangerousOccurencesHighLowTempExposure());
+                                mETBurstingMachine.setText("" + objManpowerInput.getDangerousOccurencesBurstiingOfMachine());
 
-                                mETFatal.setText(""+objManpowerInput.getNoOfInjuriesFatal());
-                                mETLTI.setText(""+objManpowerInput.getNoOfInjuriesLti());
-                                mETMTI.setText(""+objManpowerInput.getNoOfInjuriesMti());
-                                mETFirstAid.setText(""+objManpowerInput.getNoOfInjuriesFirstAid());
+                                mETFatal.setText("" + objManpowerInput.getNoOfInjuriesFatal());
+                                mETLTI.setText("" + objManpowerInput.getNoOfInjuriesLti());
+                                mETMTI.setText("" + objManpowerInput.getNoOfInjuriesMti());
+                                mETFirstAid.setText("" + objManpowerInput.getNoOfInjuriesFirstAid());
 
-                                mETLTIFR.setText(""+objManpowerInput.getInjuryRateLtifr());
-                                mETMTIFR.setText(""+objManpowerInput.getInjuryRateMtifr());
-                                mETLTIFRPercent.setText(""+objManpowerInput.getInjuryRateLtifrPer());
-                                mETMTIFRPercent.setText(""+objManpowerInput.getInjuryRateMtifrPer());
-                                mETAIFR.setText(""+objManpowerInput.getInjuryRateAfr());
-                                mETAIFRPercent.setText(""+objManpowerInput.getInjuryRateAfrPer());
+                                mETLTIFR.setText("" + objManpowerInput.getInjuryRateLtifr());
+                                mETMTIFR.setText("" + objManpowerInput.getInjuryRateMtifr());
+                                mETLTIFRPercent.setText("" + objManpowerInput.getInjuryRateLtifrPer());
+                                mETMTIFRPercent.setText("" + objManpowerInput.getInjuryRateMtifrPer());
+                                mETAIFR.setText("" + objManpowerInput.getInjuryRateAfr());
+                                mETAIFRPercent.setText("" + objManpowerInput.getInjuryRateAfrPer());
 
                                 Log.d("", response.toString());
-                            }
-                            else{
+                            } else {
 
                             }
-                        }catch (Exception e){
+                        } catch (Exception e) {
                             e.getMessage();
                         }
 
@@ -2477,6 +2476,7 @@ public class CreateManpowerActivity extends BaseActivity {
 
         }
     }
+
     private boolean validate() {
         try {
 
