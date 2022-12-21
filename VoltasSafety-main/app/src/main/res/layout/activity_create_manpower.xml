@@ -1,0 +1,2346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash_bg"
+    android:orientation="vertical"
+    tools:context=".CreateObservationActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/create_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:textSize="16dp"
+            android:text="Safety MIS"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Next"
+            android:textColor="@android:color/white" />
+
+    </TableRow>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:background="@drawable/layout_bordershape"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin20dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:layout_marginRight="@dimen/margin20dp"
+            android:layout_marginBottom="@dimen/margin40dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_customer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/Dialog">
+
+                <EditText
+                    android:id="@+id/edit_site_project_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                    android:hint="Site/Project Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLength="100"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:paddingBottom="3dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/darker_gray" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textVertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Vertical/BU"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:layout_marginRight="@dimen/margin5dp"
+                android:background="@drawable/searchview_bordershape"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <Spinner
+                    android:id="@+id/spinnerVertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Select Vertical/BU"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:gravity="left"
+                    android:layout_marginLeft="-12dp"
+                    android:layout_gravity="left"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textZone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Zone"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:layout_marginRight="@dimen/margin5dp"
+                android:background="@drawable/searchview_bordershape"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <Spinner
+                    android:id="@+id/spinnerZone"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="select Zone"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:gravity="left"
+                    android:layout_marginLeft="-12dp"
+                    android:layout_gravity="left"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textBranch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Branch"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:layout_marginRight="@dimen/margin5dp"
+                android:background="@drawable/searchview_bordershape"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <Spinner
+                    android:id="@+id/spinnerBranch"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="Select Branch"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:layout_marginLeft="-12dp"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/Dialog">
+
+                <EditText
+                    android:id="@+id/edit_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n ./ -"
+                    android:hint="Date"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:inputType="date"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:paddingBottom="3dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/darker_gray" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/incident_information_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Staff"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_head_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/Dialog">
+
+                    <EditText
+                        android:id="@+id/edit_head_count"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:background="@null"
+                        android:digits="1234567890"
+                        android:hint="Head Count"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:paddingBottom="3dp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@android:color/darker_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_head_count_contract"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/Dialog">
+
+                <EditText
+                    android:id="@+id/edit_head_count_contract"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:background="@null"
+                    android:digits="1234567890"
+                    android:hint="Head Count Contract"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:paddingBottom="3dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/darker_gray" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_man_hours_worked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/Dialog">
+
+                <EditText
+                    android:id="@+id/edit_man_hours_worked"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:background="@null"
+                    android:digits="1234567890"
+                    android:hint="Man Hours Worked"
+                    android:imeOptions="actionNext"
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:paddingBottom="3dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/darker_gray" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_man_hours_worked_contract"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/Dialog">
+
+                <EditText
+                    android:id="@+id/edit_man_hours_worked_contract"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:background="@null"
+                    android:digits="1234567890"
+                    android:hint="Man Hours Worked Contract"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:paddingBottom="3dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/darker_gray" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_total_man_hours_worked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/Dialog">
+
+                <EditText
+                    android:id="@+id/edit_total_man_hours_worked"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:background="@null"
+                    android:digits="1234567890"
+                    android:hint="Total Man Hours Worked"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:paddingBottom="3dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/darker_gray" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txt_no_of_suggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="No.of Suggestions/Observations Employee"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_ppe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_ppe"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:hint="PPE"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_workatheight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_workatheight"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="true"
+                    android:hint="Work At Height"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_environment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+            <EditText
+                    android:id="@+id/edit_environment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="true"
+                    android:hint="Environment"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_lowrisk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_lowrisk"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:hint="Low Risk"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_mediumrisk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_mediumrisk"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="true"
+                    android:hint="Medium Risk"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_highrisk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+                <EditText
+                    android:id="@+id/edit_highrisk"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="true"
+                    android:hint="High Risk"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_closeobservation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_closeobservation"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:hint="Close Observation"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_openobservation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_openobservation"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="true"
+                    android:hint="Open Observation"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_obserationtotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+                <EditText
+                    android:id="@+id/edit_obserationtotal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txt_other_internal_external_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Other - Internal and External Name"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_internal_other_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_internal_other_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                    android:hint="Internal Training"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_external_other_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_external_other_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_.#$!&amp;@"
+                    android:focusable="true"
+                    android:hint="External Training"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/project_manager_information_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Auto Edit Project Manager"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_project_manager_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_project_manager_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                    android:hint="Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_project_manager_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_project_manager_mail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_.#$!&amp;@"
+                    android:focusable="true"
+                    android:hint="Email"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_project_manager_mobileno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/edit_project_manager_mobileno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="1234567890"
+                        android:focusable="true"
+                        android:hint="Mobile Number"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:maxLength="10"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txt_safety_officer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Auto Edit Safety Officer"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_safety_officer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_safety_officer_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                    android:hint="Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_safety_officer_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_safety_officer_mail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_.#$!&amp;@"
+                    android:focusable="true"
+                    android:hint="Email"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_safety_officer_mobileno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/edit_safety_officer_mobileno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="0123456789"
+                        android:focusable="true"
+                        android:hint="Mobile Number"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_pb_bu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Auto Edit PD/BU"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_pb_bu_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_pb_bu_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                    android:hint="Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_pb_bu_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_pb_bu_mail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_.#$!&amp;@"
+                    android:focusable="true"
+                    android:hint="Email"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_pb_bu_mobileno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_pb_bu_mobileno"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:focusable="true"
+                    android:hint="Mobile Number"
+                    android:imeOptions="actionNext"
+                    android:maxLength="10"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_no_of_participents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_no_of_participents"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="true"
+                    android:hint="No of Participants in Tool Box"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_no_of_safetymeetings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_no_of_safetymeetings"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="true"
+                    android:hint="No of safety meetings"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_no_of_unsafe_acts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_no_of_unsafe_acts"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="true"
+                    android:hint="No of unsafe acts"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_no_of_unsafe_conditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+            <EditText
+                android:id="@+id/edit_no_of_unsafe_conditions"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:digits="1234567890"
+                android:focusable="true"
+                android:hint="No of unsafe conditions"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:paddingTop="@dimen/margin5dp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+       <!-- <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_no_of_she_meetings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_no_of_she_meetings"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="true"
+                    android:hint="No of she meetings"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+        </com.google.android.material.textfield.TextInputLayout>-->
+
+            <TextView
+                android:id="@+id/no_safety_inspections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="No of Safety Inspections"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_fire_extinguishers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_fire_extinguishers"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:hint="Fire Extinguishers"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_elcb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_elcb"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Elcb"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_electrical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_electrical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Electrical"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_full_body_harness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_full_body_harness"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Full Body Harness"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_ppes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_ppes"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="PPEs"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_lifting_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_lifting_equipment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Lifting Equipment"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_grinding_machine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_grinding_machine"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Grinding Machine"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_welding_machine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_welding_machine"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Welding Machine"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_gas_cutting_machine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_gas_cutting_machine"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Gas Cutting Machine"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_office_store"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_office_store"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Office Store"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_scaffold_ladder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_scaffold_ladder"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Scaffold Ladder"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_third_party_vehicle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_third_party_vehicle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Third Party Vehicle"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_total"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txt_emergency_response"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Emergency Response"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_fire_drill_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_fire_drill_count"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:hint="Fire Drill Count"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_fire_drill_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_fire_drill_date"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Fire Drill Date"
+                    android:imeOptions="actionNext"
+                    android:inputType="date"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_mock_drill_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_mock_drill_count"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:focusable="true"
+                    android:hint="Mock Drill Count"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_mock_drill_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_mock_drill_date"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Mock Drill Date"
+                    android:imeOptions="actionNext"
+                    android:inputType="date"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_emergencytotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_emergencytotal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_nearmiss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Near Miss"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_electrical_fire"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_electrical_fire"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:hint="Electrical Fire"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_slip_trip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_slip_trip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:hint="Slip Trip"
+                    android:imeOptions="actionNext"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_fall_of_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_fall_of_material"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Fall of Material"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_equipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_equipment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Equipment"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_collision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_collision"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890 "
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Collision"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_toppling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_toppling"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Toppling"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_floor_opening"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_floor_opening"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Floor Opening"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_vehicle_movement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_vehicle_movement"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Vehicle Movement"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_nearmiss_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_nearmiss_total"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_safety_events"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Safety Events"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_nsd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_nsd"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:hint="NSD"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_road"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_road"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Road"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_wed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_wed"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="WED"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_health"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_health"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Health"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_other"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Other"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_safety_events_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_safety_events_total"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_no_of_audits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="No of Audits"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_sr_leadership"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_sr_leadership"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:hint="Sr Leadership"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_internal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_internal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Internal"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_external"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_external"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="External"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_audits_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_audits_total"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_safety_communications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Safety Communications"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_sr_management"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_sr_management"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:hint="Sr. Management"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_bu_heads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_bu_heads"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="BS Heads"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_sllb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_sllb"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="SLLB"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_no_of_reward_given"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_no_of_reward_given"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="No of Reward Given"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_no_of_safety_violation_memo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit__no_of_safety_violation_memo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="No of Safety Violation Memo"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_safety_comm_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_safety_comm_total"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_dangerous_occurences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Dangerous Occurences"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_structure_collapse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_structure_collapse"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:hint="Structure Collapse"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_high_pressure_release"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_high_pressure_release"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="High Pressure Release"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_high_low_temp_exposure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_high_low_temp_exposure"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="High/Low Temp Exposure"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_bursting_machine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_bursting_machine"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="Bursting of Machine"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_dangerous_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_dangerous_total"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_no_of_injuries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="No Of Injuries"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_fatal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_fatal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:hint="Fatal"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_lti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_lti"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="LTI"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_mti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_mti"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="MTI"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_first_aid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_first_aid"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="First Aid"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_injuries_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_injuries_total"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/text_injury_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Injury Rate"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_ltifr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_ltifr"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:hint="LTIFR"
+                    android:focusable="true"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_ltifr_percent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_ltifr_percent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="LTIFR%"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_mtifr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_mtifr"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="MTIFR"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_mtifr_percent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_mtifr_percent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="MTIFR%"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_aifr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_aifr"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="true"
+                    android:hint="AIFR"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_aifr_percent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_aifr_percent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="AIFR%"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_injuries_rate_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:layout_marginBottom="@dimen/margin20dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_injuries_rate_total"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="Total"
+                    android:imeOptions="actionNext"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?><!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+
+<!--xmlns:tools="http://schemas.android.com/tools"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent">-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin60dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/margin10dp"
+            android:src="@mipmap/ic_back"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text=" DETAILS"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/delete_observation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="15dp"
+            android:padding="@dimen/margin10dp"
+            android:src="@drawable/ic_delete_black_24dp"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_bordershape"
+        android:orientation="vertical"
+        android:overScrollMode="never">
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@drawable/layout_bordershape"-->
+                <!--android:orientation="vertical"-->
+                <!--android:overScrollMode="never">-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textview_obsr_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.25"
+                        android:visibility="gone"
+                        android:text="Observation Id:"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp"
+                        />
+
+                    <Button
+                        android:id="@+id/edit_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="edit"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/customer_information_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.25"
+                            android:text="CUSTOMER INFORMATION"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:textSize="@dimen/text_14sp"
+                          />
+
+                        <Button
+                            android:id="@+id/statusButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin30dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.75"
+                            android:background="@drawable/status_bg"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_12sp" />
+
+                    </LinearLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_customer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/edit_customer_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                            android:focusable="false"
+                            android:hint="@string/customer_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_sap_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/edit_sap_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:focusable="false"
+
+                            android:hint="@string/sap_number"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_site_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/edit_site_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                            android:focusable="false"
+                            android:hint="Site Name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/edit_address"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                            android:focusable="false"
+                            android:hint="Address"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions|textMultiLine"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_zone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/edit_zone"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                            android:focusable="false"
+                            android:hint="Zone"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_branch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/edit_branch"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                            android:focusable="false"
+                            android:hint="Branch"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/incident_information_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin20dp"
+                        android:text="OBSERVATION INFORMATION"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="@dimen/text_14sp"
+            />
+
+                    <!--  <TableRow
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          android:weightSum="1">
+
+                          <TextView
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="@dimen/margin20dp"
+                              android:layout_weight="0.5"
+                              android:text="Observation Id"
+                              android:textColor="@android:color/black"
+                              android:textSize="@dimen/text_14sp"
+                              />
+
+                          <TextView
+                              android:id="@+id/observationId"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="@dimen/margin20dp"
+                              android:layout_weight="0.5"
+                              android:textColor="@android:color/black"
+                              android:textSize="@dimen/text_14sp"
+                              android:textStyle="bold" />
+                      </TableRow>-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/typeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/obsrId"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:focusable="false"
+                            android:hint="Observation Id"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputlayout_incident_date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin15dp"
+                            android:layout_weight=".5"
+                            android:paddingBottom="@dimen/margin10dp"
+                            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                            <EditText
+                                android:id="@+id/edit_incident_date"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                                android:focusable="false"
+                                android:hint="@string/incident_date"
+                                android:imeOptions="actionNext"
+                                android:inputType="date"
+                                android:paddingTop="@dimen/margin5dp"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputlayout_incident_time"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin15dp"
+                            android:layout_weight=".5"
+                            android:paddingBottom="@dimen/margin10dp"
+                            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                            <EditText
+                                android:id="@+id/edit_incident_time"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                                android:focusable="false"
+
+                                android:hint="@string/incident_time"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:paddingTop="@dimen/margin5dp"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </TableRow>
+
+
+                    <TextView
+                        android:id="@+id/employee_information_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:text="EMPLOYEE INFORMATION"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="@dimen/text_14sp"
+        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/employee_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:focusable="false"
+                            android:hint="Employee Name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/employee_id"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                            android:focusable="false"
+                            android:hint="Employee ID"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/employee_email_id"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                            android:focusable="false"
+                            android:hint="Employee Email ID"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:paddingBottom="@dimen/margin10dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/employee_phone_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                            android:focusable="false"
+                            android:hint="Employee Phone Number"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/site_engineer_information_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:text="PROJECT/SITE/LOCATION/FACTORY INCHARGE INFORMATION"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="@dimen/text_14sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/inputlayout_site_engineer_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+
+                            android:layout_weight="0.1"
+                            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/edit_site_engineer_name"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:focusable="false"
+                                android:hint="@string/site_engineer_name"
+                                android:imeOptions="actionNext"
+                                android:inputType="textNoSuggestions"
+                                android:paddingTop="@dimen/margin5dp"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/text_14sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <ImageView
+                            android:id="@+id/edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.9"
+                            android:src="@drawable/ic_edit"
+                            android:visibility="visible" />
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_pf_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/edit_pf_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:focusable="false"
+                            android:hint="@string/pf_number"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_email_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/edit_email_id"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:focusable="false"
+                            android:hint="Project/Site/Location/Factory Incharge Email Id"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/edit_phone_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:focusable="false"
+                            android:hint="Project/Site/Location/Factory Incharge Phone Number"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/concern_engineer_information_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin20dp"
+                        android:text="CONCERNED TEAM/ENGINEER/SUPERVISOR INFORMATION"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="@dimen/text_14sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:orientation="horizontal">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_concern_engineer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.1"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/edit_concern_engineer_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. "
+                            android:hint="Concerned Team/Engineer/Supervisor Name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions|text"
+                            android:paddingTop="@dimen/margin10dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/concernEng"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.9"
+                        android:src="@drawable/ic_edit"
+                        android:visibility="invisible" />
+                    </LinearLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_concern_pf_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/edit_concern_pf_number"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:focusable="false"
+                            android:hint="Concerned Team/Engineer/Supervisor Email"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputlayout_other_responsible_persons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <EditText
+                            android:id="@+id/edit_other_responsible_persons"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:focusable="false"
+                            android:hint="Other Email ID"
+                            android:imeOptions="actionNext"
+                            android:inputType="textNoSuggestions"
+                            android:paddingTop="@dimen/margin5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin20dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/observation_header"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="3dp"
+                            android:layout_weight="0.1"
+                            android:text="OBSERVATION DETAILS"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:textSize="@dimen/text_14sp"/>
+
+                        <ImageView
+                            android:id="@+id/item_header_edit"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.9"
+                            android:src="@drawable/ic_edit" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/observation_items_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/closeObservation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="@dimen/margin10dp"
+                    android:layout_marginBottom="@dimen/margin10dp"
+                    android:background="@drawable/status_bg"
+                    android:text="Close"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

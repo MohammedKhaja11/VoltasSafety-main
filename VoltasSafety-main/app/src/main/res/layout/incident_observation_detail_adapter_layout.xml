@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/parentscroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_bordershape"
+        android:nestedScrollingEnabled="true"
+        android:overScrollMode="never"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bordershape"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/listoftask_header"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.1"
+                    android:text="ITEM"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/item_edit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:src="@drawable/ic_edit"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_site_engineer_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/incidentType"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                    android:focusable="false"
+
+                    android:hint="Incident Type"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayoutRisk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/riskType"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                    android:focusable="false"
+                    android:hint="Risk Type"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/injured"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                    android:focusable="false"
+                    android:hint="Is Any Person Injured?"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <RadioGroup
+                android:id="@+id/injuied_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <RadioButton
+                    android:id="@+id/injuried_yes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin10dp"
+                    android:layout_weight="0.5"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/injuried_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="No" />
+            </RadioGroup>
+
+
+            <LinearLayout
+                android:id="@+id/injuredLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/textTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="11dp"
+                        android:text="INJURED PERSON DETAILS"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/addButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_add_button"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/textThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="Person Details Are Mandatory."
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp"
+                    android:visibility="gone" />
+
+
+                <ListView
+                    android:id="@+id/incidentItemList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical"
+                    android:overScrollMode="never" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nonInjuredLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin5dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/brief_discription"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+                        android:hint="Brief Description Of Incident"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin5dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/direct_cause"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+
+                        android:hint="Direct Cause"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin5dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/underlaying_cause"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+
+                        android:hint="Under Laying Cause"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin5dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/route_cause"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+
+                        android:hint="Root Cause"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_corrective_action"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/correctiveEdit"
+                        android:hint="Corrective Action"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+
+
+                        android:inputType="textMultiLine"
+                        android:paddingTop="@dimen/margin10dp"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_preventive_action"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/preventiveEdit"
+                        android:hint="Preventive Action"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+                        android:inputType="textMultiLine"
+                        android:paddingTop="@dimen/margin10dp"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_sub_contractor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/subcontractorEdit"
+                        android:hint="Subcontractor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+                        android:inputType="textMultiLine"
+                        android:paddingTop="@dimen/margin10dp"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin5dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/analysisEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+                        android:hint="Analysis"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin5dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/classicificationEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+                        android:hint="Classification"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin5dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/classicificationremarksEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                        android:focusable="false"
+                        android:hint="Remark reason why?"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:paddingTop="@dimen/margin5dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/text_14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/idAttachText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/margin5dp"
+                        android:layout_marginTop="@dimen/margin15dp"
+                        android:text="Photos And Videos"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/addAttachment"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_add_button"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <GridView
+                    android:id="@+id/gv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin30dp"
+                    android:layout_weight="1"
+                    android:nestedScrollingEnabled="true"
+                    android:numColumns="5" />
+
+                <TextView
+                    android:id="@+id/idAttach"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="Add Photos And Videos"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/action_item_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

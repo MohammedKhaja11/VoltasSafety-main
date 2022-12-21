@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="@color/holoheme"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin30dp"
+        android:layout_marginBottom="@dimen/margin10dp"
+        android:background="@drawable/bottom_curved_edges"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/forgot_password_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="Forgot Password"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/information_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin40dp"
+            android:gravity="center"
+            android:paddingRight="@dimen/margin10dp"
+            android:paddingLeft="@dimen/margin10dp"
+            android:text="@string/enter_employee_id_to_get_otp_to_your_registered_mobile_email"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_14sp" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_your_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin30dp"
+            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+            <EditText
+                android:id="@+id/edit_your_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin10dp"
+                android:layout_marginRight="@dimen/margin10dp"
+                android:paddingTop="@dimen/margin5dp"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-_@."
+                android:textColor="@android:color/black"
+                android:hint="Employee Code or Email"
+                android:singleLine="true"
+                android:padding="@dimen/margin10dp"
+                android:textSize="@dimen/text_14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/margin80dp"
+        android:layout_height="@dimen/margin80dp"
+        android:layout_marginTop="-110dp"
+        android:background="@drawable/bottom_navigation_background"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/margin40dp"
+            android:layout_marginLeft="@dimen/margin10dp"
+            android:layout_marginRight="@dimen/margin10dp"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/margin40dp"
+            android:src="@drawable/forgot_password_user_icon" />
+    </FrameLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="130dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/margin10dp"
+        android:weightSum="1">
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight=".3"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:background="@drawable/edittext_bordershape"
+            android:text="CANCEL"
+            android:textSize="@dimen/text_12sp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1" />
+
+
+        <Button
+            android:id="@+id/ok_button"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight=".3"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:background="@drawable/edittext_bordershape"
+            android:text="OK"
+            android:textSize="@dimen/text_12sp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1" />
+    </TableRow>
+</FrameLayout>

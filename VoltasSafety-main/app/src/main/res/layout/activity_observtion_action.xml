@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/margin10dp"
+    tools:context=".adapters.ObservtionActionAdapter">
+
+    <TextView
+        android:id="@+id/action_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textStyle="normal"
+        android:text="Action"></TextView>
+
+    <TextView
+        android:id="@+id/action_data_textview"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_height="wrap_content"
+        android:text="Action"></TextView>
+<!--<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/idText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:text="Add Photos / Videos / Documents"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/addButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_add_button" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/addFileText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="@dimen/margin15dp"
+        android:text="File Size must not exceed then 3MB\n only .pdf .zip, .gif .png .jpg .jpeg files are accepted"
+        android:textColor="@android:color/darker_gray" />
+
+
+    <LinearLayout
+        android:id="@+id/imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"></LinearLayout>
+
+
+    <GridView
+        android:id="@+id/gv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:nestedScrollingEnabled="true"
+        android:numColumns="5"
+        android:overScrollMode="never" />
+
+
+</LinearLayout>-->
+</LinearLayout>
+
+

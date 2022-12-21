@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash_bg"
+    android:orientation="vertical">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00BBD3"
+        android:clickable="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolbarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:padding="@dimen/margin10dp"
+                android:src="@mipmap/ic_back"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="OBSERVATIONS"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/logOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:padding="@dimen/margin10dp"
+                android:src="@mipmap/ic_logout"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/searchHits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/margin10dp"
+        android:background="@drawable/searchview_bordershape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/search_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/searchview_bordershape"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin40dp"
+                    android:layout_weight="0.15"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+                    android:hint="Search by status and customer name etc"
+                    android:paddingLeft="@dimen/margin20dp"
+                    android:paddingRight="@dimen/margin10dp"
+                    android:singleLine="true"
+                    android:textSize="13dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+                <ImageView
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.85"
+                    android:padding="10dp"
+                    android:src="@drawable/places_ic_search" />
+            </LinearLayout>
+
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/layoutOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin10dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/tv_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:background="@drawable/all_click"
+                        android:paddingLeft="@dimen/margin20dp"
+                        android:paddingRight="@dimen/margin20dp"
+                        android:text="All"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_12sp" />
+
+
+                    <Button
+                        android:id="@+id/tv_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:background="@drawable/open_unclick"
+                        android:paddingLeft="@dimen/margin20dp"
+                        android:paddingRight="@dimen/margin20dp"
+                        android:text="Open"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:textSize="@dimen/text_12sp" />
+
+
+                    <Button
+                        android:id="@+id/tv_assigned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:background="@drawable/assign_unclick"
+                        android:paddingLeft="@dimen/margin20dp"
+                        android:paddingRight="@dimen/margin20dp"
+                        android:text="Assigned"
+                        android:textColor="#FF8800"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <Button
+                        android:id="@+id/tv_closed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginRight="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:background="@drawable/close_unclick"
+                        android:paddingLeft="@dimen/margin20dp"
+                        android:paddingRight="@dimen/margin20dp"
+                        android:text="Closed"
+                        android:textColor="#1CC861"
+                        android:textSize="@dimen/text_12sp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/observation_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:nestedScrollingEnabled="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchHits" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/recycler_view_bg"
+    android:orientation="vertical"
+    tools:context=".CreateObservationActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="WELCOME GUEST USER"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Submit"
+            android:textColor="@android:color/white"
+            android:visibility="invisible" />
+
+
+    </TableRow>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin30dp"
+        android:background="@drawable/layout_bordershape"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin20dp"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please Let Us Know Who You Are!"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/Dialog">
+
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                    android:hint="Your Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions"
+                    android:maxLength="100"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:paddingBottom="3dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/darker_gray" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/Dialog">
+
+                <EditText
+                    android:id="@+id/editMobileNumber"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="1234567890"
+                    android:hint="Mobile Number"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/darker_gray" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:theme="@style/Dialog">
+
+                <EditText
+                    android:id="@+id/editEmail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n ._"
+                    android:hint="E-Mail ID"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@android:color/darker_gray" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/margin20dp"
+                android:text="Choose Incident Type"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:text="You can choose multiple reports as well"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin15dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/hazard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin30dp"
+                        android:layout_marginRight="@dimen/margin10dp"
+                        android:background="@drawable/guest_user_login_bg"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:src="@mipmap/ic_land_hazard" />
+
+                        <TextView
+                            android:id="@+id/hazardText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Hazard"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/nearmiss"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginRight="@dimen/margin30dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/guest_user_login_bg"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="15dp"
+                            android:src="@mipmap/ic_land_nearmiss" />
+
+                        <TextView
+                            android:id="@+id/nearMissText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="NearMiss"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="MissingConstraints" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin5dp"
+                        android:layout_marginRight="@dimen/margin5dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/guest_user_login_bg"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:src="@mipmap/ic_land_nearmiss" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="Near Miss"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="MissingConstraints" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/creationPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin40dp"
+                android:layout_marginBottom="@dimen/margin10dp"
+                android:background="@drawable/guest_user_proceed_bg"
+                android:text="Please report your observation"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

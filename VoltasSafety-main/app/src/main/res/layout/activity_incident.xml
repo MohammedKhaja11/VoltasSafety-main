@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash_bg"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Cancel"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="INCIDENT OBSERVATION"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Submit"
+            android:textColor="@android:color/white" />
+
+
+    </TableRow>
+
+
+    <ScrollView
+        android:id="@+id/parentScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin30dp"
+        android:background="@drawable/layout_bordershape"
+        android:nestedScrollingEnabled="true"
+        android:overScrollMode="never"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/margin20dp"
+            android:background="@drawable/layout_bordershape"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/verticalHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vertical"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:layout_marginRight="@dimen/margin5dp"
+                android:background="@drawable/searchview_bordershape"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <Spinner
+                    android:id="@+id/spinner_vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:hint="Select Vertical"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/riskTypeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Incident Type"
+                android:textColor="@android:color/holo_blue_light"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_verticle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:layout_marginRight="@dimen/margin5dp"
+                android:background="@drawable/searchview_bordershape"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <Spinner
+                    android:id="@+id/spinnerIncident"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:hint="Choose Incident Type"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/riskHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Risk Type"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="16sp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayoutRisk"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:layout_marginRight="@dimen/margin5dp"
+                android:background="@drawable/searchview_bordershape"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <Spinner
+                    android:id="@+id/spinnerRisk"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:hint="Choose Risk Type"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/classificationHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Classification"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="16sp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:textStyle="bold" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_clasification"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:layout_marginRight="@dimen/margin5dp"
+                android:background="@drawable/searchview_bordershape"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <Spinner
+                    android:id="@+id/sp_clasification"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:hint="@string/category"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="2dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:layout_marginRight="@dimen/margin5dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tv_clasificationremarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="start"
+                    android:text="Remark reason why?"
+                    android:textColor="@android:color/holo_blue_light" />
+
+                <!--<TextView
+                    android:id="@+id/counted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:textColor="@android:color/holo_blue_light" />-->
+
+                <!-- <TextView
+                     android:id="@+id/totalCount"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_alignRight="@+id/counted"
+                     android:layout_alignParentRight="true"
+                     android:layout_weight="1.35"
+                     android:gravity="left"
+                     android:text="500"
+                     android:textColor="@color/holoheme"
+                     android:visibility="gone" />-->
+
+            </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_clasificationremarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:descendantFocusability="beforeDescendants"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/et_clasificationremarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin50dp"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890.,\n "
+                    android:inputType="textNoSuggestions|textMultiLine|text"
+                    android:maxLength="500"
+                    android:nestedScrollingEnabled="true"
+                    android:overScrollMode="always"
+                    android:scrollbarSize="5dp"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/riskCatHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:text="Is Any Person Injured?"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Select Yes Incase Of Any Injury."
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+
+                <RadioGroup
+                    android:id="@+id/injuied_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:id="@+id/injuried_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin10dp"
+                        android:layout_weight="0.5"
+                        android:checked="true"
+                        android:text="Yes"
+                        app:buttonTint="@android:color/holo_blue_light" />
+
+                    <RadioButton
+                        android:id="@+id/injuried_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="No"
+                        app:buttonTint="@android:color/holo_blue_light" />
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/injuredLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/textTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="0dp"
+                        android:text="ADD INJURED PERSON DETAILS"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/addButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_add_button" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/textThree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Person Details Are Mandatory."
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+
+                <ListView
+                    android:id="@+id/incidentItemList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:descendantFocusability="afterDescendants"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="vertical"
+                    android:overScrollMode="never" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nonInjuredLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="start"
+                        android:text="Brief Description Of Incident*"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <TextView
+                        android:id="@+id/descriptionCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right|center"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.8"
+                        android:gravity="right|center"
+                        android:maxLength="500"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <!-- <TextView
+                         android:id="@+id/totalCount"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_alignRight="@+id/counted"
+                         android:layout_alignParentRight="true"
+                         android:layout_weight="1.35"
+                         android:gravity="left"
+                         android:text="500"
+                         android:textColor="@color/holoheme"
+                         android:visibility="gone" />-->
+
+                </LinearLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_brief_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/countEdit_brief_discription"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin60dp"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890.,\n "
+                        android:inputType="textNoSuggestions|textMultiLine|text"
+                        android:maxLength="500"
+                        android:nestedScrollingEnabled="true"
+                        android:overScrollMode="always"
+                        android:scrollbarSize="5dp"
+                        android:scrollbars="vertical"
+                        android:scrollHorizontally="true"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@android:color/darker_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="start"
+                        android:text="Direct Cause *"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <TextView
+                        android:id="@+id/directCauseCount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right|center"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.8"
+                        android:gravity="right|center"
+                        android:maxLength="500"
+                        android:textColor="@color/holoheme" />
+
+                    <!--      <TextView
+                              android:id="@+id/totalCount"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_alignRight="@+id/counted"
+                              android:layout_alignParentRight="true"
+                              android:layout_weight="1.35"
+                              android:gravity="left"
+                              android:text="500"
+                              android:textColor="@color/holoheme"
+                              android:visibility="gone" />
+     -->
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_direct_cause"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/Dialog">
+
+                    <EditText
+                        android:id="@+id/edittext_direct_cause"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                        android:inputType="textMultiLine"
+                        android:maxLength="500"
+                        android:paddingTop="5dp"
+                        android:textSize="14sp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="500" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@android:color/darker_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="start"
+                        android:text="Under Laying Cause"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <!-- <TextView
+                         android:id="@+id/descriptionCount"
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_gravity="right|center"
+                         android:layout_marginRight="5dp"
+                         android:layout_weight="0.8"
+                         android:gravity="right|center"
+                         android:maxLength="500"
+                         android:textColor="@color/holoheme" />-->
+
+                    <!-- <TextView
+                         android:id="@+id/totalCount"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_alignRight="@+id/counted"
+                         android:layout_alignParentRight="true"
+                         android:layout_weight="1.35"
+                         android:gravity="left"
+                         android:text="500"
+                         android:textColor="@color/holoheme"
+                         android:visibility="gone" />-->
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_underlaying_cause"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:theme="@style/Dialog">
+
+                    <EditText
+                        android:id="@+id/edit_text_underlaying_cause"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                        android:inputType="textMultiLine"
+                        android:maxLength="500"
+                        android:paddingTop="5dp"
+                        android:textSize="14sp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="500" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginRight="2dp"
+                        android:background="@android:color/darker_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="start"
+                        android:text="Root Cause *"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <!--  <TextView
+                          android:id="@+id/descriptionCount"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:layout_gravity="right|center"
+                          android:layout_marginRight="5dp"
+                          android:layout_weight="0.8"
+                          android:gravity="right|center"
+                          android:maxLength="500"
+                          android:textColor="@color/holoheme" />-->
+
+                    <!-- <TextView
+                         android:id="@+id/totalCount"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_alignRight="@+id/counted"
+                         android:layout_alignParentRight="true"
+                         android:layout_weight="1.35"
+                         android:gravity="left"
+                         android:text="500"
+                         android:textColor="@color/holoheme"
+                         android:visibility="gone" />-->
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_route_description"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:layout_marginBottom="@dimen/margin30dp"
+                    android:theme="@style/Dialog">
+
+                    <EditText
+                        android:id="@+id/countEdit_route_cause"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@null"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+
+                        android:inputType="textMultiLine"
+                        android:maxLength="500"
+                        android:paddingTop="5dp"
+                        android:textSize="14sp"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="500" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+
+                        android:layout_marginRight="2dp"
+                        android:background="@android:color/darker_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/correctiveLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="@dimen/margin5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/correctiveText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="start"
+                        android:text="Corrective Action "
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <TextView
+                        android:id="@+id/countCorrective"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.8"
+                        android:gravity="right|center"
+                        android:textColor="@android:color/holo_blue_light" />
+
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_corrective_action"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:descendantFocusability="beforeDescendants"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout"
+                    >
+
+                    <EditText
+                        android:id="@+id/correctiveEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin50dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890.,\n "
+                        android:inputType="textNoSuggestions|textMultiLine|text"
+                        android:maxLength="500"
+                        android:nestedScrollingEnabled="true"
+                        android:overScrollMode="always"
+                        android:scrollbarSize="5dp"
+                        android:scrollbars="vertical"
+                        android:scrollHorizontally="true"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/preventiveLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="@dimen/margin5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/preventiveText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="start"
+                        android:text="Preventive Action"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <TextView
+                        android:id="@+id/countPreventive"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="0.8"
+                        android:gravity="right|center"
+                        android:textColor="@android:color/holo_blue_light" />
+
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_preventive_action"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin5dp"
+                    android:descendantFocusability="beforeDescendants"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/preventiveEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin50dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890.,\n "
+                        android:inputType="textNoSuggestions|textMultiLine|text"
+                        android:maxLength="500"
+                        android:nestedScrollingEnabled="true"
+                        android:overScrollMode="always"
+                        android:scrollbarSize="5dp"
+                        android:scrollbars="vertical"
+                        android:scrollHorizontally="true"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/subcontractorLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="@dimen/margin5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/subcontractorText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="start"
+                        android:text="SubContractor"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <!--  <TextView
+                          android:id="@+id/countPreventive"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="right|center"
+                          android:layout_marginRight="5dp"
+                          android:layout_weight="0.8"
+                          android:gravity="right|center"
+                          android:textColor="@android:color/holo_blue_light" />
+          -->
+
+                </LinearLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_sub_contractor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="@dimen/margin5dp"
+                    android:descendantFocusability="beforeDescendants"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/subcontractorEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin50dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890.,\n "
+                        android:inputType="textNoSuggestions|textMultiLine|text"
+                        android:maxLength="500"
+                        android:nestedScrollingEnabled="true"
+                        android:overScrollMode="always"
+                        android:scrollbarSize="5dp"
+                        android:scrollbars="vertical"
+                        android:scrollHorizontally="true"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/analysisLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="@dimen/margin5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/analysisText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:gravity="start"
+                        android:text="Analysis"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                    <!--  <TextView
+                          android:id="@+id/countPreventive"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="right|center"
+                          android:layout_marginRight="5dp"
+                          android:layout_weight="0.8"
+                          android:gravity="right|center"
+                          android:textColor="@android:color/holo_blue_light" />
+          -->
+
+                </LinearLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputlayout_analysis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="@dimen/margin5dp"
+                    android:descendantFocusability="beforeDescendants"
+                    android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/analysisEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin50dp"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890.,\n "
+                        android:inputType="textNoSuggestions|textMultiLine|text"
+                        android:maxLength="500"
+                        android:nestedScrollingEnabled="true"
+                        android:overScrollMode="always"
+                        android:scrollbarSize="5dp"
+                        android:scrollbars="vertical"
+                        android:scrollHorizontally="true"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:id="@+id/idAttachText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Add Photos / Videos / Documents"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/addAttachment"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_add_button" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/attachDiscript"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="File Size must not exceed then 3MB\n only .pdf .zip, .gif .png .jpg .jpeg files are accepted"
+                    android:textColor="@android:color/darker_gray" />
+
+
+                <GridView
+                    android:id="@+id/gv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin30dp"
+                    android:nestedScrollingEnabled="true"
+                    android:numColumns="5" />
+
+                <LinearLayout
+                    android:id="@+id/action_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin20dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="5dp"
+                        android:text="ACTION"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:id="@+id/inputlayout_observatiob_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin5dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:orientation="vertical"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Description of Action"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:textSize="@dimen/text_12sp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/count_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="@dimen/margin20dp"
+                                android:src="@drawable/ic_add_button" />
+
+                        </RelativeLayout>
+
+
+                        <EditText
+                            android:id="@+id/action_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:inputType="textMultiLine"
+                            android:maxLength="500"
+                            android:textSize="14sp"
+
+                            app:counterEnabled="true"
+                            app:counterMaxLength="500">
+
+                        </EditText>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin30dp">
+
+                        <ListView
+                            android:id="@+id/actions_listview"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="@dimen/margin10dp"
+                            android:nestedScrollingEnabled="true"
+                            android:overScrollMode="never"
+                            android:visibility="gone"></ListView>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin5dp"
+                            android:layout_marginTop="@dimen/margin10dp"
+                            android:orientation="vertical"
+                            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Action Taken"
+                                android:textColor="@android:color/holo_blue_light"
+                                android:textSize="@dimen/text_12sp"
+                                android:textStyle="normal" />
+
+                            <EditText
+                                android:id="@+id/action_name"
+                                style="@style/Dialog"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                                android:inputType="textMultiLine"
+                                android:maxLength="500"
+                                android:textSize="14sp"
+
+                                app:counterEnabled="true"
+                                app:counterMaxLength="500">
+
+                            </EditText>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/add_actions"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="@dimen/margin20dp"
+                            android:src="@drawable/ic_add_button" />
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin5dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:orientation="vertical"
+                        android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Corrective Action and Preventive Action Remarks"
+                            android:textColor="@android:color/holo_blue_light"
+                            android:textSize="@dimen/text_12sp"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/action_remarks"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+                            android:inputType="textMultiLine"
+
+                            android:maxLength="500"
+                            android:textSize="14sp"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="500">
+
+                        </EditText>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/idAttach"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="Add Photos And Videos"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

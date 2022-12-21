@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?><!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!--xmlns:app="http://schemas.android.com/apk/res-auto"--><!--xmlns:tools="http://schemas.android.com/tools"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:background="@color/holoheme"--><!--android:fitsSystemWindows="true"--><!--android:orientation="vertical">-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/holoheme"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:layout_width="@dimen/margin180dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:background="@color/white"
+                android:src="@mipmap/safety_logo_new" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="-20dp"
+                android:background="@color/holoheme"
+                android:src="@drawable/login_bg_strip" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/margin100dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="30dp"
+                    android:text="SAFETY LOGIN"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/voltasEmployee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin10dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/landing_dashboard_bg"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/margin35dp"
+                        android:src="@mipmap/ic_login" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="30dp"
+                    android:text="GUEST"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/text_14sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/guestUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin10dp"
+                    android:layout_weight="0.35"
+                    android:background="@drawable/landing_dashboard_bg"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/margin35dp"
+                        android:src="@mipmap/ic_guest" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/employee_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="30dp"
+                android:text="EMPLOYEE"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/text_14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/employee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/landing_dashboard_bg"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/margin35dp"
+                    android:src="@mipmap/ic_login" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="WHAT IT IS?"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/text_14sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/margin20dp"
+                android:background="@drawable/defination_bg"
+
+                android:overScrollMode="never" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true">
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="@dimen/margin20dp"
+                    app:ci_drawable="@drawable/circle_indicator_bg" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+        <!--
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:id="@+id/hazardDefnation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margin10dp"
+                                android:background="@drawable/landing_dashboard_bg"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="20dp"
+                                    android:src="@mipmap/ic_land_hazard" />
+
+                                <TextView
+                                    android:id="@+id/textFour"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginBottom="15dp"
+                                    android:text="Hazard"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/text_12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    tools:ignore="MissingConstraints" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:id="@+id/incidentDefnation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margin10dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/landing_dashboard_bg"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="20dp"
+                                    android:src="@mipmap/ic_land_incident" />
+
+                                <TextView
+                                    android:id="@+id/textFive"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginBottom="15dp"
+                                    android:text="Accident"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/text_12sp"
+                                    android:textStyle="bold" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/nearmissDefnation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/margin10dp"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/landing_dashboard_bg"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="20dp"
+                                    android:src="@mipmap/ic_land_nearmiss" />
+
+                                <TextView
+                                    android:id="@+id/textSix"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginBottom="15dp"
+                                    android:text="Near Miss"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="@dimen/text_12sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    tools:ignore="MissingConstraints" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    &lt;!&ndash;<LinearLayout&ndash;&gt;
+                    &lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;
+                    &lt;!&ndash;android:layout_height="wrap_content">&ndash;&gt;
+                    <TextView
+                        android:id="@+id/unsafeActText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/unsafe_act"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/text_12sp" />
+
+                    <TextView
+                        android:id="@+id/unsafeConditionText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+
+                        android:text="@string/unsafe_condition"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/text_12sp" />
+        -->
+
+        <!--</LinearLayout>-->
+        <TextView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="@dimen/margin20dp"
+            android:gravity="center"
+            android:paddingRight="@dimen/margin20dp"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/text_14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>
+
+    <!--</LinearLayout>-->
+
+
+
+

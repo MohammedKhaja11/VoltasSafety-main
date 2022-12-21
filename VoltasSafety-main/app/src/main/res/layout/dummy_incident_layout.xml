@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash_bg"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Cancel"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="INCIDENT DETAILS"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Submit"
+            android:textColor="@android:color/white" />
+
+
+    </TableRow>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin30dp"
+        android:background="@drawable/layout_bordershape">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/margin20dp"
+            android:background="@drawable/layout_bordershape"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/riskTypeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:text="Incident Type"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_verticle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:layout_marginRight="@dimen/margin5dp"
+                android:background="@drawable/searchview_bordershape"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <Spinner
+                    android:id="@+id/spinnerIncident"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:hint="Choose Incident Type"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/riskCatHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:text="Is Any Person Injured?"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Select Yes Incase Of Any Injury."
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+                <RadioGroup
+                    android:id="@+id/injuied_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <RadioButton
+                        android:id="@+id/injuried_yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin10dp"
+                        android:layout_weight="0.5"
+                        android:checked="true"
+                        android:text="Yes" />
+
+                    <RadioButton
+                        android:id="@+id/injuried_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="No" />
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/injuredLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Is Any Person Details"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/addButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_add_button" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:text="Person Details Are Mandatory."
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+
+                <ListView
+                    android:id="@+id/incidentItemList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="@dimen/margin10dp"
+                    android:overScrollMode="never" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/title_report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="@dimen/margin10dp"
+            android:src="@mipmap/ic_back"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="OBSERVATION REPORTS"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/logOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:src="@mipmap/ic_logout"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin5dp"
+            android:layout_marginRight="@dimen/margin5dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/searchview_bordershape"
+            android:text="Status Wise" />
+
+        <Button
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin5dp"
+            android:layout_marginRight="@dimen/margin5dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/searchview_bordershape"
+            android:text="Type Wise " />
+
+
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/piechart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_report"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#2CAACD</color>
+    <color name="colorAccent">@android:color/holo_blue_dark</color>
+    <color name="holoheme">#0F75BA</color>
+    <color name="white">@android:color/white</color>
+    <color name="black">@android:color/black</color>
+    <color name="DashBoardTextColor">#00BBD3</color>
+    <color name="low">#FFC806</color>
+    <color name="assigned_text">#FF8800</color>
+    <color name="open_text">#F51605</color>
+    <color name="close_text">#1CC861</color>
+    <color name="transparent">#00000000</color>
+</resources>

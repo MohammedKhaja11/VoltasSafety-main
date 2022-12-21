@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/recycler_view_bg"
+    android:orientation="vertical">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add" />
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolbarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:padding="@dimen/margin10dp"
+                android:src="@mipmap/ic_back"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="OBSERVATIONS"
+                android:textColor="@android:color/white"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/logOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:padding="@dimen/margin10dp"
+                android:src="@mipmap/ic_logout"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/searchHits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/margin10dp"
+        android:background="@drawable/searchview_bordershape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<androidx.cardview.widget.CardView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@drawable/searchview_bordershape"-->
+            <!--android:elevation="@dimen/margin5dp">-->
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin40dp"
+                    android:background="@drawable/searchview_bordershape"
+                    android:drawableLeft="@drawable/ic_search_black_24dp"
+                    android:paddingLeft="@dimen/margin10dp"
+                    android:queryHint="Search Observations by Date/Alert ID etc"
+                    android:singleLine="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            </LinearLayout>
+            <!--</androidx.cardview.widget.CardView>-->
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:id="@+id/layoutOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:background="@drawable/all_click"
+                        android:paddingLeft="30dp"
+                        android:paddingTop="@dimen/margin10dp"
+                        android:paddingRight="@dimen/margin30dp"
+                        android:paddingBottom="@dimen/margin10dp"
+                        android:text="All" />
+
+                    <TextView
+                        android:id="@+id/tv_complete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:background="@drawable/completebutton_bg"
+                        android:paddingLeft="25dp"
+                        android:paddingTop="@dimen/margin10dp"
+                        android:paddingRight="@dimen/margin25dp"
+                        android:paddingBottom="@dimen/margin10dp"
+                        android:text="Completed"
+                        android:textColor="@android:color/holo_green_dark" />
+
+                    <TextView
+                        android:id="@+id/tv_high"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:background="@drawable/open_unclick"
+                        android:paddingLeft="25dp"
+                        android:paddingTop="@dimen/margin10dp"
+                        android:paddingRight="@dimen/margin25dp"
+                        android:paddingBottom="@dimen/margin10dp"
+                        android:text="High"
+                        android:textColor="@android:color/holo_red_dark" />
+
+                    <TextView
+                        android:id="@+id/tv_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:background="@drawable/assign_unclick"
+                        android:paddingLeft="25dp"
+                        android:paddingTop="@dimen/margin10dp"
+                        android:paddingRight="@dimen/margin25dp"
+                        android:paddingBottom="@dimen/margin10dp"
+                        android:text="Medium"
+                        android:textColor="@android:color/holo_orange_dark" />
+
+                    <TextView
+                        android:id="@+id/tv_low"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin10dp"
+                        android:layout_marginTop="@dimen/margin10dp"
+                        android:layout_marginRight="@dimen/margin10dp"
+                        android:layout_marginBottom="@dimen/margin10dp"
+                        android:background="@drawable/close_unclick"
+                        android:paddingLeft="25dp"
+                        android:paddingTop="@dimen/margin10dp"
+                        android:paddingRight="@dimen/margin25dp"
+                        android:paddingBottom="@dimen/margin10dp"
+                        android:text="Low"
+                        android:textColor="@color/low" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:nestedScrollingEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchHits"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="124dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/observation_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:nestedScrollingEnabled="true"
+            android:overScrollMode="never" />
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

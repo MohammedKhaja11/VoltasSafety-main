@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@mipmap/splash_bg"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ToolbarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:padding="@dimen/margin10dp"
+                android:src="@mipmap/ic_back"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="Email Request"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/logOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:padding="@dimen/margin10dp"
+                android:src="@mipmap/ic_logout"
+                android:textColor="@android:color/white"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin30dp"
+        android:layout_marginBottom="@dimen/margin10dp"
+        android:background="@drawable/bottom_curved_edges"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/forgot_password_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:gravity="center"
+            android:text="Forgot Password"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_14sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/information_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin50dp"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin10dp"
+            android:paddingRight="@dimen/margin10dp"
+            android:text="Emp code does not exist, please contact your reporting manager and get the details added"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_14sp"
+            android:visibility="visible" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_userId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:theme="@style/Dialog">
+
+            <EditText
+                android:id="@+id/et_empcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin10dp"
+                android:layout_marginRight="@dimen/margin10dp"
+                android:background="@null"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,_@-!#$&amp;"
+                android:hint="Employee Code"
+                android:inputType="text"
+                android:padding="@dimen/margin10dp"
+                android:paddingTop="@dimen/margin5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_oldPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Dialog">
+
+            <EditText
+                android:id="@+id/et_empname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin10dp"
+                android:layout_marginRight="@dimen/margin10dp"
+                android:background="@null"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&amp;*_"
+                android:hint="Employee Name"
+                android:padding="@dimen/margin10dp"
+                android:paddingTop="@dimen/margin5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_new_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/Dialog"
+            android:visibility="gone"
+            app:passwordToggleTint="@android:color/darker_gray">
+
+            <EditText
+                android:id="@+id/et_empemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin10dp"
+                android:layout_marginRight="@dimen/margin10dp"
+                android:background="@null"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%&amp;._"
+                android:hint="Employee Email"
+                android:inputType="textWebEmailAddress"
+                android:padding="@dimen/margin10dp"
+                android:paddingTop="@dimen/margin5dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_cofirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin5dp"
+            android:layout_marginBottom="@dimen/margin15dp"
+            android:visibility="visible"
+            android:theme="@style/Dialog">
+
+            <EditText
+                android:id="@+id/et_reporting_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin10dp"
+                android:layout_marginRight="@dimen/margin10dp"
+                android:background="@null"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%&amp;._"
+                android:hint="Reporting Manager Email"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/margin10dp"
+                android:paddingTop="@dimen/margin10dp"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/darker_gray" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/margin80dp"
+        android:layout_height="@dimen/margin80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-170dp"
+        android:background="@drawable/bottom_navigation_background">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin10dp"
+            android:layout_marginRight="@dimen/margin10dp"
+            android:src="@drawable/forgot_password_user_icon" />
+    </FrameLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="@dimen/margin10dp"
+        android:gravity="center|top">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="@dimen/margin100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:layout_marginRight="@dimen/margin50dp"
+            android:background="@drawable/edittext_bordershape"
+            android:gravity="center"
+            android:text="CANCEL"
+            android:textSize="@dimen/text_12sp" />
+
+        <Button
+            android:id="@+id/ok_button"
+            android:layout_width="@dimen/margin100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:background="@drawable/edittext_bordershape"
+            android:gravity="center"
+            android:text="SUBMIT"
+            android:textSize="@dimen/text_12sp" />
+
+    </TableRow>
+</FrameLayout>
+
+

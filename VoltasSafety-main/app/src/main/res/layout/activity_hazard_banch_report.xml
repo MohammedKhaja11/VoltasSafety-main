@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash_bg"
+    android:orientation="vertical"
+    tools:context=".HazardBanchReport">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="@dimen/margin10dp"
+            android:src="@mipmap/ic_back"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="Hazard Report"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/logOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:src="@mipmap/ic_logout"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/filter_edit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:singleLine="true"
+        android:hint="Search"
+        android:inputType="text"
+        android:background="@drawable/searchview_bordershape"
+        android:paddingLeft="@dimen/margin10dp" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin10dp"
+            android:gravity="center"
+            android:text="Total Count   "
+
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/total_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin10dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <!--<TextView-->
+        <!--android:id="@+id/total_count"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:text="Total Count"-->
+        <!--android:backgroundTint="@color/white"-->
+        <!--android:background="@drawable/button_shapesmall"/>-->
+    </TableRow>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/branch_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+</LinearLayout>

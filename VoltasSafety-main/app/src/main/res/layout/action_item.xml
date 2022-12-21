@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin20dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/listoftask_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="0.1"
+            android:text="ACTION"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/item_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="14dp"
+            android:layout_weight="0.9"
+            android:src="@drawable/ic_edit"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/descriptionHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin20dp"
+        android:text="Description"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin5dp"
+
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin20dp"
+        android:text=""
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/actionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin10dp"
+
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/adminRemarksHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin20dp"
+
+        android:text="Add Remarks"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/adminRemarksText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin10dp"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>

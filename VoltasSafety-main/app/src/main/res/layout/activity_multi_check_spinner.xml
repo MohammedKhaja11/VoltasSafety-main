@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cameraContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/search_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/margin5dp"
+        android:background="@drawable/searchview_bordershape"
+        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+        android:drawableRight="@drawable/search_icon_black"
+        android:hint="Search.."
+        android:paddingLeft="@dimen/margin5dp"
+        android:paddingRight="@dimen/margin5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/chk_select_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin15dp"
+            android:layout_weight="1"
+            android:text="Select All"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:scrollbars="none" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin5dp"
+        android:background="@android:color/darker_gray" />
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin15dp"
+            android:text="Cancel"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="@dimen/text_14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin15dp"
+            android:text="Done"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="@dimen/text_14sp"
+            android:textStyle="bold" />
+    </TableRow>
+</LinearLayout>
+

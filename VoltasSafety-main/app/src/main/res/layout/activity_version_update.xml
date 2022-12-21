@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/holoheme"
+    android:gravity="center"
+
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="@dimen/margin180dp"
+            android:layout_height="@dimen/margin180dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:background="@color/white"
+            android:src="@mipmap/safety_logo_new" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="-20dp"
+            android:background="@color/holoheme"
+            android:src="@drawable/login_bg_strip" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="75dp"
+        android:background="@color/holoheme"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin20dp"
+            android:layout_marginRight="@dimen/margin20dp"
+            android:layout_marginBottom="50dp"
+            android:text="@string/upgradeText"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="@dimen/text_16sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_download_upgrade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin20dp"
+            android:layout_marginRight="@dimen/margin20dp"
+            android:drawableLeft="@drawable/ic_file_download"
+            android:paddingTop="@dimen/margin20dp"
+            android:paddingBottom="@dimen/margin20dp"
+            android:text="Download"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+</LinearLayout>

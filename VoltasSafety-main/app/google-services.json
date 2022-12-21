@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "209009839914",
+    "firebase_url": "https://voltassafety-21dca.firebaseio.com",
+    "project_id": "voltassafety-21dca",
+    "storage_bucket": "voltassafety-21dca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209009839914:android:b6c5466ba3865907f85853",
+        "android_client_info": {
+          "package_name": "com.ags.voltassafety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209009839914-0ds89lvh1koib686bp298chqa6unmiol.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ags.voltassafety",
+            "certificate_hash": "8142f1bef57968847a56ef9c0100c98cb59e2e74"
+          }
+        },
+        {
+          "client_id": "209009839914-c0s7hncintbvdc9m703jt4ep65enrfgf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGSbaBct7B7UR5PXV1yIMICLIB_SRhEyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209009839914-c0s7hncintbvdc9m703jt4ep65enrfgf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "209009839914-glboul3f3aso8ao32ru2v01dhr8jeb4n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.adventglobal.VoltasSafety"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

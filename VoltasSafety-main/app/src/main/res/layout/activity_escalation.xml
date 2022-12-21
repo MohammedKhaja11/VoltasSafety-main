@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash_bg"
+    android:orientation="vertical"
+    tools:context=".ReportsView">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:padding="@dimen/margin10dp"
+            android:src="@mipmap/ic_back"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="Escalation Report"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/logOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:src="@mipmap/ic_logout"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tv_from_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.4"
+            android:text="From Date:"
+            android:textColor="#FFF"
+            android:textSize="@dimen/text_14sp" />
+
+        <EditText
+            android:id="@+id/edit_from_date"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+
+            android:layout_weight="0.6"
+            android:background="@drawable/edittext_all_bordershape_gray"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+            android:focusable="false"
+            android:textAlignment="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tv_t0_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.4"
+            android:text="To Date:"
+            android:textColor="#FFF"
+            android:textSize="@dimen/text_14sp" />
+
+        <EditText
+            android:id="@+id/edit_to_date"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.6"
+            android:background="@drawable/edittext_all_bordershape_gray"
+
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+            android:focusable="false"
+            android:textAlignment="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tv_t0_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.4"
+            android:text="Select Type"
+            android:textColor="#FFF"
+            android:textSize="@dimen/text_14sp" />
+
+        <Spinner
+            android:id="@+id/spinner_incident_type"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.6"
+            android:background="@drawable/edittext_all_bordershape_gray"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+            android:focusable="false"
+            android:textAlignment="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tv_branch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.4"
+            android:text="Branch:"
+            android:textColor="#FFF"
+            android:textSize="@dimen/text_14sp" />
+
+        <EditText
+            android:id="@+id/edit_branch"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.6"
+
+            android:background="@drawable/edittext_all_bordershape_gray"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+            android:focusable="false"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center"
+            android:textColor="@android:color/black" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="0.4"
+            android:text="User:"
+            android:textColor="#FFF"
+            android:textSize="@dimen/text_14sp" />
+
+        <EditText
+            android:id="@+id/edit_user"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="0.6"
+
+            android:background="@drawable/edittext_all_bordershape_gray"
+            android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,&amp;@ \n "
+            android:focusable="false"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center"
+            android:textColor="@android:color/black" />
+
+    </TableRow>
+
+    <Button
+        android:id="@+id/get_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin10dp"
+        android:background="@drawable/searchview_bordershape"
+        android:gravity="center"
+        android:padding="@dimen/margin10dp"
+        android:text="GET Report" />
+</LinearLayout>

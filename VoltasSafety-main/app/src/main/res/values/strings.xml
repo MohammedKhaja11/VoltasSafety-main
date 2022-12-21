@@ -1,0 +1,56 @@
+<resources>
+    <string name="version">PVersion 1.1.8</string>
+    <string name="app_version_date">28&#8211;10&#8211;2022</string>
+    <!--<string name="version">QVersion 1.0.4</string>
+    <string name="app_version_date">04&#8211;03&#8211;2020</string>-->
+    <string name="app_name"><i>V</i>Safety</string>
+    <string name="information"></string>
+    <string name="login">LOGIN</string>
+    <string name="star1"><font fgcolor='#FF0000'>*star</font></string>
+    <string name="user_name">Employee Code</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="title_activity_observation_view">ObservationView</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="incident_date_time"><![CDATA[Observation Date & Time]]></string>
+    <string name="created_on">Created On</string>
+    <string name="observation_status">Status</string>
+    <string name="your_name">Your Name</string>
+    <string name="pf_number_optional">PF Number (optional)</string>
+    <string name="email_id">Project/Site/Location/Factory Incharge Email Id</string>
+    <string name="phone_number">Project/Site/Location/Factory Incharge Phone Number</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="branch_details">BRANCH DETAILS</string>
+    <string name="branch_name">Branch Name</string>
+    <string name="work_area_site_location">Work Area / site / Location</string>
+    <string name="address">Address</string>
+    <string name="incident_date">DD-MM-YYYY</string>
+    <string name="incident_time">HH:MM</string>
+    <string name="search">Search</string>
+    <string name="error_username">Invalid User Name</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_employee_id_to_get_otp_to_your_registered_mobile_email"><![CDATA[Enter employee ID To get OTP to your registered mobile & Email]]></string>
+    <!--<string name="customer_name">Customer Name</string>-->
+    <string name="sap_number">SAP Number</string>
+    <string name="risk">Risk</string>
+    <string name="category">Category</string>
+    <string name="incident_type">Incident Type</string>
+    <string name="site_engineer_name">Project/Site/Location/Factory Incharge Name</string>
+    <string name="pf_number">Project/Site/Location/Factory Incharge Id</string>
+    <string name="enter_otp">Please Enter Old Password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_conform_password">Enter Conform Password</string>
+    <string name="incorrect_password">Password Not Matching</string>
+    <string name="click_on_add_button_to_add_more_tasks_if_you_needed">Click on add button to add more tasks</string>
+    <string name="list_of_tasks">LIST OF TASKS</string>
+    <string name="target_date_to_close">Target Date to Close (DD-MM-YYYY)</string>
+    <string name="star"><font fgcolor='#FF3333'>*</font></string>
+    <string name="upgradeText"> Upgraded version of application is available,click below button to download.</string>
+    <string name="vsafety"><i>V</i> Safety</string>
+    <string name="unsafe_condition"><b> # Unsafe Condition </b>\nAny situation place supportive for human injury or property damage</string>
+    <string name="unsafe_act"><b> # Unsafe Act </b>\n Any personal activity may lead to injury or property damage or both</string>
+
+    <string name="pbs_setup_title">Select %1$s <font fgcolor="#FF33B5E5">brand</font> or scan the <font fgcolor="#FFFF0000">Remote</font></string>
+    <!--<string name="unsafe_act">Unsafe Act- Any personal activity may lead to injury or property damage or both</string>-->
+    <!--<string name="unsafe_condition">Unsafe Condition- Any situation place supportive for human injury or property damage</string>-->
+</resources>

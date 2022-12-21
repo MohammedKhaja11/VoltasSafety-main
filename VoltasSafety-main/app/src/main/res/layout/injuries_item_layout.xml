@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/yes_injuries_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingTop="@dimen/margin5dp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+            <EditText
+                android:id="@+id/edit_age"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingTop="@dimen/margin5dp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:weightSum="1">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_incident_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:layout_weight=".5"
+                android:paddingBottom="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_incident_date"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:hint="@string/incident_date"
+                    android:imeOptions="actionNext"
+                    android:inputType="date"
+                    android:paddingTop="@dimen/margin5dp"
+
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:layout_weight=".5"
+                android:paddingBottom="@dimen/margin10dp"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/edit_incident_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:hint="@string/incident_time"
+                    android:imeOptions="actionNext"
+
+                    android:inputType="text"
+                    android:paddingTop="@dimen/margin5dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/text_14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10dp">
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:text="Gender"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/gender_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin10dp"
+                    android:layout_marginRight="@dimen/margin10dp"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/gender_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin10dp"
+                    android:text="No" />
+            </RadioGroup>
+        </TableRow>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_employee_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+            <EditText
+                android:id="@+id/edit_employee_type"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="Employee Type"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingTop="@dimen/margin5dp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textRequired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:gravity="start"
+            android:text="This Field Is Required"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.3"
+                android:gravity="start"
+                android:text="Brief Description"
+                android:textColor="@android:color/holo_blue_light" />
+
+            <TextView
+                android:id="@+id/counted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1.35"
+                android:gravity="right"
+                android:textColor="@color/holoheme" />
+
+            <TextView
+                android:id="@+id/totalCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/counted"
+                android:layout_alignParentRight="true"
+                android:layout_weight="1.35"
+                android:gravity="left"
+                android:text="500"
+                android:textColor="@android:color/holo_blue_light"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+            <EditText
+                android:id="@+id/countEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:hint="Description"
+                android:inputType="textMultiLine"
+                android:maxLength="500"
+                android:textSize="14sp"
+                app:counterEnabled="true"
+                app:counterMaxLength="500" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_treament"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="@dimen/margin10dp"
+            android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+            <EditText
+                android:id="@+id/treament"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:hint="Treament"
+                android:maxLines="5"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</LinearLayout>

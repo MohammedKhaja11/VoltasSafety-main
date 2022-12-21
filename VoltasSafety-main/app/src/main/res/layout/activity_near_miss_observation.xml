@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/recycler_view_bg"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Cancel"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:textSize="16dp"
+            android:text="NEAR MISS OBSERVATION"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Submit"
+            android:textColor="@android:color/white" />
+
+
+    </TableRow>
+
+    <!--<TableRow-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:weightSum="1">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/cancel"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="0.2"-->
+    <!--android:gravity="center"-->
+    <!--android:text="Cancel"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="12sp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/header"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_weight="0.6"-->
+    <!--android:text="NEAR MISS OBSERVATION"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="14sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/submit"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_marginRight="10dp"-->
+    <!--android:layout_weight="0.2"-->
+    <!--android:gravity="center"-->
+    <!--android:text="Submit"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="12sp" />-->
+
+    <!--</TableRow>-->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin30dp"
+        android:background="@drawable/layout_bordershape">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/margin20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/riskTypeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:text="Risk Type"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:background="@drawable/spinner_background"
+                android:elevation="1dp">
+
+                <TextView
+                    android:id="@+id/riskType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="start"
+                    android:hint="Choose Risk Type" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/riskCatHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:text="Risk Catagory"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/spinner_background"
+                android:elevation="2dp">
+
+                <TextView
+                    android:id="@+id/riskCatagory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="start"
+                    android:hint="Choose Risk Catagory" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textRequired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:gravity="start"
+                android:text="This Field Is Required"
+                android:textColor="@android:color/holo_red_dark"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.3"
+                    android:gravity="start"
+                    android:text="Brief Description"
+                    android:textColor="@android:color/holo_blue_light" />
+
+                <TextView
+                    android:id="@+id/counted"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1.35"
+                    android:gravity="right"
+                    android:textColor="@color/holoheme" />
+
+                <TextView
+                    android:id="@+id/totalCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/counted"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1.35"
+                    android:gravity="left"
+                    android:text="500"
+                    android:textColor="@android:color/holo_blue_light"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/countEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Dummy Text"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:textSize="14sp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="500" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="Injury that could have happened?"
+                    android:maxLines="5"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/idText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="15dp"
+
+                    android:text="Add Photos And Videos"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/addButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_add_button" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="15dp"
+                android:text="File Size must not exceed then 20MB\n only .pdf .zip, .gif .png .jpg .jpeg files are accepted"
+                android:textColor="@android:color/darker_gray" />
+
+
+            <GridView
+                android:id="@+id/gv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:numColumns="4"></GridView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

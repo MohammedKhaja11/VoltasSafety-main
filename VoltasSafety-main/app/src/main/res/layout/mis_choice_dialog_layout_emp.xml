@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin10dp"
+    android:background="@drawable/defination_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_mis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:text="ADMIN BOARD REPORT"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_land_hazard" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="@dimen/margin20dp"
+            android:background="@drawable/guest_user_proceed_bg"
+            android:padding="@dimen/margin15dp"
+            android:text="Register"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin20dp"
+            android:gravity="center"
+            android:background="@drawable/guest_user_proceed_bg"
+            android:padding="@dimen/margin15dp"
+            android:text="Cancel"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</ScrollView>

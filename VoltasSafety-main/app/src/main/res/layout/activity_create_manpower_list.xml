@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/splash_bg"
+    android:orientation="vertical">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Cancel"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/create_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:textSize="16dp"
+            android:text="Safety MIS"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Submit"
+            android:textColor="@android:color/white" />
+
+
+    </TableRow>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin30dp"
+        android:background="@drawable/layout_bordershape">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="@dimen/margin20dp"
+            android:background="@drawable/layout_bordershape"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin20dp">
+
+                <TextView
+                    android:id="@+id/listoftask__internal_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="13dp"
+                    android:text="Internal Training"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/add_tasks_internal"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin10dp"
+                    android:src="@drawable/ic_add_button" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/listof_internal_taskes_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:text="Click plus button for Adding New Training"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/internal_item_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:descendantFocusability="afterDescendants"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:orientation="vertical"
+                android:overScrollMode="never">
+
+            </ListView>
+            <TextView
+                android:id="@+id/listof_internal_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:text="Total"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin20dp">
+
+                <TextView
+                    android:id="@+id/listoftask_extenal_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="13dp"
+                    android:text="External Training"
+                    android:textColor="@android:color/holo_blue_light"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/add_tasks_external"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin10dp"
+                    android:src="@drawable/ic_add_button" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/listof_external_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                android:text="Click plus button for Adding New Training"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ListView
+                android:id="@+id/external_items_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:orientation="vertical"
+                android:overScrollMode="never">
+
+            </ListView>
+            <TextView
+                android:id="@+id/listof_external_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="5dp"
+                android:text="Total"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

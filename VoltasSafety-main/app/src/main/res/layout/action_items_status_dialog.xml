@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/recycler_view_bg"
+    android:orientation="vertical"
+    tools:context=".CreateObservationActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/margin10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/create_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".6"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:padding="@dimen/margin10dp"
+            android:text="Submit"
+            android:textColor="@android:color/white" />
+
+
+    </TableRow>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin30dp"
+        android:background="@drawable/layout_bordershape"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin20dp"
+            android:layout_marginTop="@dimen/margin20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin5dp"
+                android:text="Status"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_14sp" />
+
+            <RadioButton
+                android:id="@+id/closed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Closed" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="@dimen/margin10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:gravity="start"
+                    android:text="Remarks"
+                    android:textColor="@android:color/holo_blue_light" />
+
+                <TextView
+                    android:id="@+id/countedTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="0.5"
+                    android:gravity="right|center"
+                    android:textColor="@color/holoheme" />
+
+                <!-- <TextView
+                     android:id="@+id/totalCount"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_alignRight="@+id/counted"
+                     android:layout_alignParentRight="true"
+                     android:layout_weight="1.35"
+                     android:gravity="left"
+                     android:text="500"
+                     android:textColor="@color/holoheme"
+                     android:visibility="gone" />-->
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputlayout_description"
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                android:layout_marginTop="@dimen/margin10dp"
+                android:background="@drawable/searchview_bordershape"
+                android:theme="@style/RecyclerviewitemsTextInputLayout">
+
+                <EditText
+                    android:id="@+id/countEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,.&amp;@ \n "
+                    android:gravity="left"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine"
+                    android:maxLength="500"
+                    android:padding="5dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/actionAttachLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/idText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="5dp"
+                        android:text="Add Photos / Videos / Documents"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/addButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_add_button" />
+
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/addFileText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="@dimen/margin15dp"
+                    android:text="File Size must not exceed then 3MB\n only .pdf .zip, .gif .png .jpg .jpeg files are accepted"
+                    android:textColor="@android:color/darker_gray" />
+                <GridView
+                    android:id="@+id/gv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:nestedScrollingEnabled="true"
+                    android:numColumns="5"
+                    android:overScrollMode="never" />
+
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

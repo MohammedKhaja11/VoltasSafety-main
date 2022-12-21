@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--magin dimensions-->
+    <dimen name="margin5dp">5dp</dimen>
+    <dimen name="margin10dp">10dp</dimen>
+    <dimen name="margin15dp">15dp</dimen>
+    <dimen name="margin20dp">20dp</dimen>
+    <dimen name="margin25dp">25dp</dimen>
+    <dimen name="margin30dp">30dp</dimen>
+    <dimen name="margin35dp">35dp</dimen>
+    <dimen name="margin40dp">50dp</dimen>
+    <dimen name="margin50dp">50dp</dimen>
+    <dimen name="margin55dp">55dp</dimen>
+    <dimen name="margin60dp">60dp</dimen>
+    <dimen name="margin65dp">65dp</dimen>
+    <dimen name="margin70dp">70dp</dimen>
+    <dimen name="margin80dp">80dp</dimen>
+    <dimen name="margin180dp">180dp</dimen>
+    <dimen name="margin150dp">150dp</dimen>
+    <dimen name="margin100dp">100dp</dimen>
+    <dimen name="margin120dp">120dp</dimen>
+
+    <!--text sizes-->
+    <dimen name="text_12sp">12sp</dimen>
+    <dimen name="text_14sp">14sp</dimen>
+    <dimen name="text_16sp">16sp</dimen>
+    <dimen name="text_18sp">18sp</dimen>
+    <dimen name="text_20sp">20sp</dimen>
+
+</resources>
