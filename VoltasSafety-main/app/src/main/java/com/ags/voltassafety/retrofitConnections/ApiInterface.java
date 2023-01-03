@@ -12,6 +12,7 @@ import com.ags.voltassafety.model.ConfirmPasswordResponse;
 import com.ags.voltassafety.model.CreateManpowerInput;
 import com.ags.voltassafety.model.CreateResponse;
 import com.ags.voltassafety.model.CustomerResponse;
+import com.ags.voltassafety.model.DeleteResponce;
 import com.ags.voltassafety.model.EmailLoginOTPVerificationResponse;
 import com.ags.voltassafety.model.EmailSignInResponse;
 import com.ags.voltassafety.model.EmailandOtpVerificationRequest;
@@ -186,6 +187,11 @@ public interface ApiInterface {
     @Headers({"Accept: application/json"})
     @PUT("Observation/ReopenItemAction")
     Call<CreateResponse> reopenObservationItem(@Header("Authorization") String Response, @Body ActionItemReOpenInput data);
+
+
+    @Headers({"Accept: application/json"})
+    @DELETE("api/Observation/Delete/{ObservaionId}")
+    Call<DeleteResponce> deleteObservation(@Header("Authorization") String Response, @Path("ObservaionId") String ObservaionId);
 
     @Headers({"Accept: application/json"})
     @DELETE("Observation/DeleteObservationItem/{observationItemId}")
