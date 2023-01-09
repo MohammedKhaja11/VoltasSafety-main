@@ -188,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="10dp"
-                android:text="You can choose multiple reports as well"
+                android:text="you can choose at least one report"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="@dimen/text_14sp"
                 android:textStyle="bold" />
