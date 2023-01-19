@@ -9,6 +9,8 @@ import com.ags.voltassafety.model.ChangePassword;
 import com.ags.voltassafety.model.ChangePasswordModel;
 import com.ags.voltassafety.model.ConfirmPassword;
 import com.ags.voltassafety.model.ConfirmPasswordResponse;
+import com.ags.voltassafety.model.CreateManPowerResponce;
+import com.ags.voltassafety.model.CreateManPowerResult;
 import com.ags.voltassafety.model.CreateManpowerInput;
 import com.ags.voltassafety.model.CreateResponse;
 import com.ags.voltassafety.model.CustomerResponse;
@@ -318,9 +320,9 @@ public interface ApiInterface {
 
     @Headers({"Accept: application/json"})
     @POST("ManPower/CreateManPower")
-    Call<CreateResponse> createManPower(@Header("Authorization") String Response,@Body CreateManpowerInput createManpowerInput);
+    Call<CreateManPowerResponce> createManPower(@Header("Authorization") String Response, @Body CreateManpowerInput createManpowerInput);
 
     @Headers({"Accept: application/json"})
     @PUT("ManPower/UpdateManPower/{ManPowerID}")
-    Call<CreateResponse> updateManPower(@Header("Authorization") String Response,@Body CreateManpowerInput createManpowerInput,@Path("ManPowerID") String ManPowerID);
+    Call<CreateManPowerResponce> updateManPower(@Header("Authorization") String Response,@Body CreateManpowerInput createManpowerInput,@Path("ManPowerID") String ManPowerID);
 }

@@ -155,7 +155,7 @@ public class ManPowerExternalAdapter extends BaseAdapter {
         mSPType.setAdapter(hazardtype);
         int pos = 0;
         for (int i = 0; i < externalTypeId.size(); i++) {
-            if (objInternal.getType().equalsIgnoreCase(externalTypeId.get(i)))
+            if (objInternal.getType() != null && objInternal.getType().equalsIgnoreCase(externalTypeId.get(i)))
                 pos = i;
         }
         mSPType.setSelection(pos);
