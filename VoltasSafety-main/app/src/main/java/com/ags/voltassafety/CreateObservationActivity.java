@@ -1447,6 +1447,8 @@ public class CreateObservationActivity extends BaseActivity implements BranchAda
                         }
 
 
+                    }else {
+                        progressDialog.dismiss();
                     }
 
                 }

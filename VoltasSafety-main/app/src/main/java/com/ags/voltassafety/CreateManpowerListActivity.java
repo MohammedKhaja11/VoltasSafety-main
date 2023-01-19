@@ -1,5 +1,6 @@
 package com.ags.voltassafety;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,6 +18,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.ags.voltassafety.adapters.ManPowerExternalAdapter;
 import com.ags.voltassafety.adapters.ManPowerInternalAdapter;
+import com.ags.voltassafety.model.CreateManPowerResponce;
+import com.ags.voltassafety.model.CreateManPowerResult;
 import com.ags.voltassafety.model.CreateManpowerInput;
 import com.ags.voltassafety.model.CreateResponse;
 import com.ags.voltassafety.model.EntityResponse;
@@ -43,10 +46,10 @@ public class CreateManpowerListActivity extends BaseActivity {
 
     EditText mETPFNumber;
     TextView mTVVertical;
-    Spinner mSPZone,mSPBranch;
-    ListView mLVInternalRecyclerView,mLVExternalRecyclerView;
-    private TextView mCancel,mTitle,mSubmit,mTVInternalHeader,mTVExternalHeader;
-    ImageView mBtnAddInternal,mBtnAddExternal;
+    Spinner mSPZone, mSPBranch;
+    ListView mLVInternalRecyclerView, mLVExternalRecyclerView;
+    private TextView mCancel, mTitle, mSubmit, mTVInternalHeader, mTVExternalHeader;
+    ImageView mBtnAddInternal, mBtnAddExternal;
     ArrayList<EntityResult> entityResponseArrayList;
     List<Internal> internalArrayList = new ArrayList<>();
     List<External> externalArrayList = new ArrayList<>();
@@ -56,37 +59,37 @@ public class CreateManpowerListActivity extends BaseActivity {
     ManPowerInternalAdapter manPowerInternalAdapter;
     ManPowerExternalAdapter manPowerExternalAdapter;
     private android.app.AlertDialog.Builder alertDialog;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         try {
-                setContentView(R.layout.activity_create_manpower_list);
-                Toolbar toolbar = findViewById(R.id.toolbar);
-                setSupportActionBar(toolbar);
-                mCancel = findViewById(R.id.cancel);
-                mSubmit = findViewById(R.id.submit);
-                mTitle = findViewById(R.id.create_title);
-                mLVInternalRecyclerView = findViewById(R.id.internal_item_recycler_view);
-                mLVExternalRecyclerView = findViewById(R.id.external_items_recycler_view);
-                mTVInternalHeader = findViewById(R.id.listoftask__internal_header);
-                mTVExternalHeader = findViewById(R.id.listoftask_extenal_header);
+            setContentView(R.layout.activity_create_manpower_list);
+//            Toolbar toolbar = findViewById(R.id.toolbar);
+//            setSupportActionBar(toolbar);
+            mCancel = findViewById(R.id.cancel);
+            mSubmit = findViewById(R.id.submit);
+            mTitle = findViewById(R.id.create_title);
+            mLVInternalRecyclerView = findViewById(R.id.internal_item_recycler_view);
+            mLVExternalRecyclerView = findViewById(R.id.external_items_recycler_view);
+            mTVInternalHeader = findViewById(R.id.listoftask__internal_header);
+            mTVExternalHeader = findViewById(R.id.listoftask_extenal_header);
 
-                mTVInternalHeader.setTypeface(Utilities.fontBold(getApplicationContext()));
+            mTVInternalHeader.setTypeface(Utilities.fontBold(getApplicationContext()));
 
-                mTVExternalHeader.setTypeface(Utilities.fontBold(getApplicationContext()));
-                mTitle.setTypeface(Utilities.fontBold(getApplicationContext()));
-                mCancel.setTypeface(Utilities.fontRegular(getApplicationContext()));
-                mSubmit.setTypeface(Utilities.fontRegular(getApplicationContext()));
+            mTVExternalHeader.setTypeface(Utilities.fontBold(getApplicationContext()));
+            mTitle.setTypeface(Utilities.fontBold(getApplicationContext()));
+            mCancel.setTypeface(Utilities.fontRegular(getApplicationContext()));
+            mSubmit.setTypeface(Utilities.fontRegular(getApplicationContext()));
 
-                mBtnAddInternal = findViewById(R.id.add_tasks_internal);
-                mBtnAddExternal = findViewById(R.id.add_tasks_external);
+            mBtnAddInternal = findViewById(R.id.add_tasks_internal);
+            mBtnAddExternal = findViewById(R.id.add_tasks_external);
             objManpowerHeader = (CreateManpowerInput) getIntent().getExtras().getSerializable("HeaderObject");
             if (objManpowerHeader != null && objManpowerHeader.getId() != null) {
 
                 internalArrayList.addAll(objManpowerHeader.getInternal());
                 externalArrayList.addAll(objManpowerHeader.getExternal());
-            }
-            else{
+            } else {
 
                 objInternal = new Internal();
                 internalArrayList.add(objInternal);
@@ -95,11 +98,10 @@ public class CreateManpowerListActivity extends BaseActivity {
                 externalArrayList.add(objExternal);
             }
 
-            if(Utilities.isConnectingToInternet(CreateManpowerListActivity.this)){
+            if (Utilities.isConnectingToInternet(CreateManpowerListActivity.this)) {
 
                 entityMapValues();
-            }
-            else {
+            } else {
                 showAlert("Please Check Your Internet Connection");
             }
 
@@ -201,40 +203,37 @@ public class CreateManpowerListActivity extends BaseActivity {
             mSubmit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    try{
-                        if(validateInternalItems(internalArrayList) && validateExternalItems(externalArrayList))
-                        if (objManpowerHeader != null && objManpowerHeader.getId() != null) {
+                    try {
+                        if (validateInternalItems(internalArrayList) && validateExternalItems(externalArrayList))
+                            if (objManpowerHeader != null && objManpowerHeader.getId() != null) {
 
-                            objManpowerHeader.setInternal(internalArrayList);
-                            objManpowerHeader.setExternal(externalArrayList);
-                            if(Utilities.isConnectingToInternet(CreateManpowerListActivity.this)) {
+                                objManpowerHeader.setInternal(internalArrayList);
+                                objManpowerHeader.setExternal(externalArrayList);
+                                if (Utilities.isConnectingToInternet(CreateManpowerListActivity.this)) {
 
-                                updateManPowerData(objManpowerHeader);
+                                    updateManPowerData(objManpowerHeader);
+                                } else {
+                                    showAlert("Please Check Your Internet Connection");
+                                }
+
+
+                            } else {
+                                objManpowerHeader.setInternal(internalArrayList);
+                                objManpowerHeader.setExternal(externalArrayList);
+                                if (Utilities.isConnectingToInternet(CreateManpowerListActivity.this)) {
+
+                                    createManPowerData(objManpowerHeader);
+                                } else {
+                                    showAlert("Please Check Your Internet Connection");
+                                }
                             }
-                            else{
-                                showAlert("Please Check Your Internet Connection");
-                            }
-
-
-                        }
-                        else{
-                            objManpowerHeader.setInternal(internalArrayList);
-                            objManpowerHeader.setExternal(externalArrayList);
-                            if(Utilities.isConnectingToInternet(CreateManpowerListActivity.this)) {
-
-                                createManPowerData(objManpowerHeader);
-                            }
-                            else{
-                                showAlert("Please Check Your Internet Connection");
-                            }
-                        }
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.getMessage();
                     }
                 }
             });
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
         }
     }
@@ -243,30 +242,42 @@ public class CreateManpowerListActivity extends BaseActivity {
         try {
             //CreateResponse registerResponse;
             Gson gson = new Gson();
-        String json = gson.toJson(inputModel);
+            String json = gson.toJson(inputModel);
 
-        Log.d("<<<<>>>>>>>>>>>>", json);
+            Log.d("<<<<>>>>>>>>>>>>", json);
             SharedPreferences sharedPreferences = getSharedPreferences("Bearer", MODE_PRIVATE);
             ApiInterface apiInterface = RetrofitConnect.getClient().create(ApiInterface.class);
 
-            Call<CreateResponse> call = apiInterface.createManPower("Bearer " + sharedPreferences.getString("Bearertoken", null),inputModel);
+            Call<CreateManPowerResponce> call = apiInterface.createManPower("Bearer " + sharedPreferences.getString("Bearertoken", null), inputModel);
             showProgressDialog(CreateManpowerListActivity.this);
-            call.enqueue(new Callback<CreateResponse>() {
-                public void onResponse(Call<CreateResponse> call, Response<CreateResponse> response) {
+            call.enqueue(new Callback<CreateManPowerResponce>() {
+                public void onResponse(Call<CreateManPowerResponce> call, Response<CreateManPowerResponce> response) {
                     if (response.isSuccessful()) {
                         try {
                             dismissProgress();
 
                             if (response.body() != null && response.body().getSuccess()) {
-                                CreateResponse registerResponse = response.body();
 
-                                Intent intent = new Intent(CreateManpowerListActivity.this, HomeActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                //intent.putExtra("Name", "HAZARD REPORTING");
-                                startActivity(intent);
-                            }
-                            else{
-                                Utilities.showAlertDialog(response.body().getErrors()[0],CreateManpowerListActivity.this);
+                                final AlertDialog.Builder builder = new AlertDialog.Builder(CreateManpowerListActivity.this, R.style.MyDialogTheme);
+                                builder.setTitle(getResources().getString(R.string.information))
+                                        .setMessage("Man Power Created Successfully With Man Power Id--(" + response.body().getResult().getId() + ")")
+                                        .setCancelable(false)
+                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                dialogInterface.dismiss();
+                                                Intent intent = new Intent(CreateManpowerListActivity.this, HomeActivity.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                //intent.putExtra("Name", "HAZARD REPORTING");
+                                                startActivity(intent);
+                                            }
+                                        }).create().show();
+//                                CreateManPowerResponce registerResponse = response.body();
+
+
+                            } else {
+                                Utilities.showAlertDialog(response.body().toString(), CreateManpowerListActivity.this);
                             }
                         } catch (Exception e) {
                             e.getMessage();
@@ -278,7 +289,7 @@ public class CreateManpowerListActivity extends BaseActivity {
                     }
                 }
 
-                public void onFailure(Call<CreateResponse> call, Throwable t) {
+                public void onFailure(Call<CreateManPowerResponce> call, Throwable t) {
                     dismissProgress();
                     Log.d("LoginResponse", t.getMessage() + "");
                 }
@@ -300,10 +311,10 @@ public class CreateManpowerListActivity extends BaseActivity {
             SharedPreferences sharedPreferences = getSharedPreferences("Bearer", MODE_PRIVATE);
             ApiInterface apiInterface = RetrofitConnect.getClient().create(ApiInterface.class);
 
-            Call<CreateResponse> call = apiInterface.updateManPower("Bearer " + sharedPreferences.getString("Bearertoken", null),inputModel,""+inputModel.getId());
+            Call<CreateManPowerResponce> call = apiInterface.updateManPower("Bearer " + sharedPreferences.getString("Bearertoken", null), inputModel, "" + inputModel.getId());
             showProgressDialog(CreateManpowerListActivity.this);
-            call.enqueue(new Callback<CreateResponse>() {
-                public void onResponse(Call<CreateResponse> call, Response<CreateResponse> response) {
+            call.enqueue(new Callback<CreateManPowerResponce>() {
+                public void onResponse(Call<CreateManPowerResponce> call, Response<CreateManPowerResponce> response) {
                     if (response.isSuccessful()) {
                         try {
                             try {
@@ -314,15 +325,25 @@ public class CreateManpowerListActivity extends BaseActivity {
                                 e.printStackTrace();
                             }
                             if (response.body() != null && response.body().getSuccess()) {
-                                CreateResponse registerResponse = response.body();
+//                                CreateManPowerResponce registerResponse = response.body();
+                                final AlertDialog.Builder builder = new AlertDialog.Builder(CreateManpowerListActivity.this, R.style.MyDialogTheme);
+                                builder.setTitle(getResources().getString(R.string.information))
+                                        .setMessage("Man Power Updated Successfully With Man Power Id--(" + response.body().getResult().getId() + ")")
+                                        .setCancelable(false)
+                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                dialogInterface.dismiss();
+                                                Intent intent = new Intent(CreateManpowerListActivity.this, HomeActivity.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                                //intent.putExtra("Name", "HAZARD REPORTING");
+                                                startActivity(intent);
+                                            }
+                                        }).create().show();
 
-                                Intent intent = new Intent(CreateManpowerListActivity.this, HomeActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                //intent.putExtra("Name", "HAZARD REPORTING");
-                                startActivity(intent);
-                            }
-                            else{
-                                Utilities.showAlertDialog(response.body().getErrors()[0],CreateManpowerListActivity.this);
+                            } else {
+                                Utilities.showAlertDialog(response.body().getErrors().toString(), CreateManpowerListActivity.this);
                             }
                         } catch (Exception e) {
                             e.getMessage();
@@ -334,7 +355,7 @@ public class CreateManpowerListActivity extends BaseActivity {
                     }
                 }
 
-                public void onFailure(Call<CreateResponse> call, Throwable t) {
+                public void onFailure(Call<CreateManPowerResponce> call, Throwable t) {
                     Log.d("LoginResponse", t.getMessage() + "");
                 }
             });
@@ -369,7 +390,7 @@ public class CreateManpowerListActivity extends BaseActivity {
                                 manPowerInternalAdapter = new ManPowerInternalAdapter(CreateManpowerListActivity.this, internalArrayList, entityResponseArrayList);
                                 mLVInternalRecyclerView.setAdapter(manPowerInternalAdapter);
 
-                                manPowerExternalAdapter = new ManPowerExternalAdapter(CreateManpowerListActivity.this, externalArrayList, entityResponseArrayList );
+                                manPowerExternalAdapter = new ManPowerExternalAdapter(CreateManpowerListActivity.this, externalArrayList, entityResponseArrayList);
                                 mLVExternalRecyclerView.setAdapter(manPowerExternalAdapter);
 
 
@@ -422,10 +443,9 @@ public class CreateManpowerListActivity extends BaseActivity {
                 }
 
             }
-            if(flag){
+            if (flag) {
 
-            }
-            else{
+            } else {
                 Utilities.showAlertDialog("Please fill all the fields in item", CreateManpowerListActivity.this);
             }
         } catch (Exception e) {
@@ -434,6 +454,7 @@ public class CreateManpowerListActivity extends BaseActivity {
         }
         return flag;
     }
+
     private boolean validateExternalItems(List<External> list) {
         boolean flag = true;
         // boolean flag = false;
@@ -457,10 +478,9 @@ public class CreateManpowerListActivity extends BaseActivity {
                 }
 
             }
-            if(flag){
+            if (flag) {
 
-            }
-            else{
+            } else {
                 Utilities.showAlertDialog("Please fill all the fields in item", CreateManpowerListActivity.this);
             }
         } catch (Exception e) {

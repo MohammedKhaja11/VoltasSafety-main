@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ags.voltassafety.adapters.ObservationDetailsAdapter;
 import com.ags.voltassafety.model.CreateResponse;
+import com.ags.voltassafety.model.DeleteResponce;
 import com.ags.voltassafety.model.ObservationAttachmentModel;
 import com.ags.voltassafety.model.ObservationDetailsResponse;
 import com.ags.voltassafety.model.ObservationHeader;
@@ -50,7 +51,7 @@ public class ObservationDetailsActivity extends BaseActivity implements Observat
             edit_pf_number, edit_concern_pf_number, edit_site_engineer_email, edit_customer_name, edit_site_engineer_phone, edit_site_engineer_name, edit_email_id, edit_other_responsible_persons, edit_phone_number, employee_name, employee_id, employee_email_id, employee_phone_number;
     RecyclerView observation_items_recyclerview;
     ImageView delete_observation;
-    public TextView concern_engineer_information_text,obsr_id;
+    public TextView concern_engineer_information_text, obsr_id;
     ObservationDetailsAdapter observationDetailsAdapter;
     List<ObservationItemsDetailsModel> observationItemsList;
     List<ObservationAttachmentModel> observationAttachmentsList;
@@ -232,15 +233,16 @@ public class ObservationDetailsActivity extends BaseActivity implements Observat
             Gson gson = new Gson();
             String json = gson.toJson(observationHeader);
             Log.d("jsonRequest", json);
-            Call<CreateResponse> call = apiInterface.updateObservation("Bearer " + sharedPreferences.getString("Bearertoken", null), observationHeader);
+//            Call<CreateResponse> call = apiInterface.updateObservation("Bearer " + sharedPreferences.getString("Bearertoken", null), observationHeader);
+            Call<DeleteResponce> call = apiInterface.deleteObservation("Bearer " + sharedPreferences.getString("Bearertoken", null), "" + observationHeader.getObservationId());
             showProgressDialog(ObservationDetailsActivity.this);
 
-            call.enqueue(new Callback<CreateResponse>() {
+            call.enqueue(new Callback<DeleteResponce>() {
                 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-                public void onResponse(Call<CreateResponse> call, Response<CreateResponse> response) {
+                public void onResponse(Call<DeleteResponce> call, Response<DeleteResponce> response) {
 
                     if (response.isSuccessful()) {
-                        CreateResponse loginResponse = response.body();
+                        DeleteResponce loginResponse = response.body();
                         Log.d("observationresponse", response.body().getResult() + "");
                         if (loginResponse.getSuccess()) {
                             dismissProgress();
@@ -266,7 +268,7 @@ public class ObservationDetailsActivity extends BaseActivity implements Observat
 //
                         } else {
                             dismissProgress();
-                            showAlert(loginResponse.getErrors()[0]);
+                            showAlert(loginResponse.getErrorCode());
                             //showToast(loginResponse.getErrors() + "");
                         }
                     } else {
@@ -275,7 +277,7 @@ public class ObservationDetailsActivity extends BaseActivity implements Observat
                     }
                 }
 
-                public void onFailure(Call<CreateResponse> call, Throwable t) {
+                public void onFailure(Call<DeleteResponce> call, Throwable t) {
                     dismissProgress();
                     Log.d("LoginResponse", t.getMessage() + "");
                 }
@@ -314,13 +316,13 @@ public class ObservationDetailsActivity extends BaseActivity implements Observat
                                     observationHeader = response.body().getResult();
                                     if (observationHeader.getReason().equalsIgnoreCase("Near Miss")) {
 
-                                        toolbar_title.setText(observationHeader.getReason().toUpperCase() + " DETAILS("+observationId+")");
+                                        toolbar_title.setText(observationHeader.getReason().toUpperCase() + " DETAILS(" + observationId + ")");
                                     } else if (observationHeader.getReason().equalsIgnoreCase("Hazard")) {
-                                        toolbar_title.setText(observationHeader.getReason().toUpperCase() + " DETAILS("+observationId+")");
+                                        toolbar_title.setText(observationHeader.getReason().toUpperCase() + " DETAILS(" + observationId + ")");
                                     } else {
 
                                         //toolbar_title.setText(observationHeader.getTypeOfObservation().toUpperCase() + " DETAILS");
-                                        toolbar_title.setText("ACCIDENT DETAILS("+observationId+")");
+                                        toolbar_title.setText("ACCIDENT DETAILS(" + observationId + ")");
                                     }
                                     Log.d("observationgetresult", observationDetailsResponse.getResult() + "");
                                     observationItemsList.addAll(observationDetailsResponse.getResult().getObservationItemsDetailsModels());
@@ -339,14 +341,13 @@ public class ObservationDetailsActivity extends BaseActivity implements Observat
                                     edit_branch.setText(response.body().getResult().getGuestBranch());
                                     edit_phone_number.setText(response.body().getResult().getManagerPhoneNumber());
                                     otherEmails = new StringBuilder();
-                                    for(int i=0; i < observationHeader.getOtherResponsiblepersons().size(); i++){
-                                         otherEmails.append(observationHeader.getOtherResponsiblepersons().get(i));
-                                         if(i == observationHeader.getOtherResponsiblepersons().size()-1){
-                                             //otherEmails.append("");
-                                         }
-                                         else{
-                                             otherEmails.append(",");
-                                         }
+                                    for (int i = 0; i < observationHeader.getOtherResponsiblepersons().size(); i++) {
+                                        otherEmails.append(observationHeader.getOtherResponsiblepersons().get(i));
+                                        if (i == observationHeader.getOtherResponsiblepersons().size() - 1) {
+                                            //otherEmails.append("");
+                                        } else {
+                                            otherEmails.append(",");
+                                        }
                                     }
                                     edit_other_responsible_persons.setText(otherEmails.toString());
 

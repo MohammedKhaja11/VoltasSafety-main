@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ags.voltassafety.model.LoginCredentials;
 import com.ags.voltassafety.model.LoginResponse;
@@ -95,9 +96,11 @@ public class GuestUserActivity extends AppCompatActivity {
 //                    @Override
 //                    public void onClick(View view) {
                 if (validation(editUserName, editUserEmail, editUserNumber)) {
+                    try {
+
                     Dialog dialogOne = new Dialog(GuestUserActivity.this, R.style.DialogOne);
 //                AlertDialog.Builder mAlertDialog = new AlertDialog.Builder(LandingPageActivity.this);
-                    dialogOne.setContentView(R.layout.mis_choice_dialog_layout);
+                    dialogOne.setContentView(R.layout.hazard_defnation_layout);
                     dialogOne.setCancelable(false);
                     ImageView close = dialogOne.findViewById(R.id.close);
                     TextView titleText = dialogOne.findViewById(R.id.titleText);
@@ -178,6 +181,9 @@ public class GuestUserActivity extends AppCompatActivity {
                     });
                     dialogOne.show();
 
+                    }catch (Exception e){
+                        Toast.makeText(GuestUserActivity.this, ""+e, Toast.LENGTH_SHORT).show();
+                    }
 //                    }
 //                });
 //                hazard.setBackgroundResource(R.drawable.guest_user_proceed_bg);

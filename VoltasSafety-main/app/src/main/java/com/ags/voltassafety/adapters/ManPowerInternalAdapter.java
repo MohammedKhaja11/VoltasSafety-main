@@ -152,7 +152,7 @@ public class ManPowerInternalAdapter extends BaseAdapter {
         mSPType.setAdapter(hazardtype);
         int pos = 0;
         for (int i = 0; i < internalTypeId.size(); i++) {
-            if (objInternal.getType().equalsIgnoreCase(internalTypeId.get(i)))
+            if (objInternal.getType() != null && objInternal.getType().equalsIgnoreCase(internalTypeId.get(i)))
                 pos = i;
         }
         mSPType.setSelection(pos);

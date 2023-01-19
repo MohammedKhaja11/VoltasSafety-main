@@ -9,9 +9,12 @@ import com.ags.voltassafety.model.ChangePassword;
 import com.ags.voltassafety.model.ChangePasswordModel;
 import com.ags.voltassafety.model.ConfirmPassword;
 import com.ags.voltassafety.model.ConfirmPasswordResponse;
+import com.ags.voltassafety.model.CreateManPowerResponce;
+import com.ags.voltassafety.model.CreateManPowerResult;
 import com.ags.voltassafety.model.CreateManpowerInput;
 import com.ags.voltassafety.model.CreateResponse;
 import com.ags.voltassafety.model.CustomerResponse;
+import com.ags.voltassafety.model.DeleteResponce;
 import com.ags.voltassafety.model.EmailLoginOTPVerificationResponse;
 import com.ags.voltassafety.model.EmailSignInResponse;
 import com.ags.voltassafety.model.EmailandOtpVerificationRequest;
@@ -187,6 +190,11 @@ public interface ApiInterface {
     @PUT("Observation/ReopenItemAction")
     Call<CreateResponse> reopenObservationItem(@Header("Authorization") String Response, @Body ActionItemReOpenInput data);
 
+
+    @Headers({"Accept: application/json"})
+    @DELETE("api/Observation/Delete/{ObservaionId}")
+    Call<DeleteResponce> deleteObservation(@Header("Authorization") String Response, @Path("ObservaionId") String ObservaionId);
+
     @Headers({"Accept: application/json"})
     @DELETE("Observation/DeleteObservationItem/{observationItemId}")
     Call<CreateResponse> deleteObservationItem(@Header("Authorization") String Response, @Path("observationItemId") int observationItemId);
@@ -312,9 +320,9 @@ public interface ApiInterface {
 
     @Headers({"Accept: application/json"})
     @POST("ManPower/CreateManPower")
-    Call<CreateResponse> createManPower(@Header("Authorization") String Response,@Body CreateManpowerInput createManpowerInput);
+    Call<CreateManPowerResponce> createManPower(@Header("Authorization") String Response, @Body CreateManpowerInput createManpowerInput);
 
     @Headers({"Accept: application/json"})
     @PUT("ManPower/UpdateManPower/{ManPowerID}")
-    Call<CreateResponse> updateManPower(@Header("Authorization") String Response,@Body CreateManpowerInput createManpowerInput,@Path("ManPowerID") String ManPowerID);
+    Call<CreateManPowerResponce> updateManPower(@Header("Authorization") String Response,@Body CreateManpowerInput createManpowerInput,@Path("ManPowerID") String ManPowerID);
 }
